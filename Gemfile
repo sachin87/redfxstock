@@ -28,6 +28,9 @@ gem 'rmagick', '~> 2.13.2'
 gem 'carrierwave', '~> 0.8.0'
 gem "devise", "~> 2.2.4"
 gem "simple_form", "~> 2.1.0"
+gem 'acts_as_commentable', '3.0.1'
+gem 'acts-as-taggable-on'
+gem "ajaxful_rating", "~> 2.2.9.1"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
