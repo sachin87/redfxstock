@@ -1,13 +1,22 @@
 Redfxstock::Application.routes.draw do
-  resources :roles
+  resources :galleries
 
+
+  resources :uploads
+
+
+  resources :expertises
+
+
+  resources :profiles
+
+  resources :roles
 
   resources :categories
 
-
   devise_for :users
 
-  root :to => "users#index"
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

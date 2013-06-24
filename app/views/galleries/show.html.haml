@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p#notice= notice
+
+#paintings
+  - @gallery.uploads.each do |upload|
+    .painting
+      = image_tag upload.image_url(:thumb).to_s
+      .name= upload.name
+      .actions
+        = link_to "edit", edit_upload_path(upload)
+        |
+        \#{link_to "remove", upload, :confirm => 'Are you sure?', :method => :delete}
+  .clear
+
+= link_to 'Edit', edit_gallery_path(@gallery)
+\|
+= link_to 'Back', galleries_path

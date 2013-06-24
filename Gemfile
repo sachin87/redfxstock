@@ -5,8 +5,6 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'pg'
 
 
@@ -30,8 +28,12 @@ gem "devise", "~> 2.2.4"
 gem "simple_form", "~> 2.1.0"
 gem 'acts_as_commentable', '3.0.1'
 gem 'acts-as-taggable-on'
-gem "ajaxful_rating", "~> 2.2.9.1"
-
+gem 'haml-rails'
+#gem 'dropbox-sdk'
+#gem 'dropbox'
+gem 'fog'
+#gem 'carrierwave_direct'
+#gem 'sidekiq'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -46,6 +48,7 @@ gem "ajaxful_rating", "~> 2.2.9.1"
 
 group :test, :development do
   gem 'debugger'
+  #gem 'sqlite3'
 end
 
 

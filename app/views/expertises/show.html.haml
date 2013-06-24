@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @expertise.name
+
+= link_to 'Edit', edit_expertise_path(@expertise)
+\|
+= link_to 'Back', expertises_path
