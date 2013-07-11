@@ -1,19 +1,21 @@
-%h1 Listing galleries
-
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
-  - @galleries.each do |gallery|
+- model_class = Gallery
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
     %tr
-      %td= gallery.name
-      %td= link_to 'Show', gallery
-      %td= link_to 'Edit', edit_gallery_path(gallery)
-      %td= link_to 'Destroy', gallery, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @galleries.each do |gallery|
+      %tr
+        %td= link_to gallery.id, gallery_path(gallery)
+        %td= gallery.name
+        %td=l gallery.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_gallery_path(gallery), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), gallery_path(gallery), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-%br
-
-= link_to 'New Gallery', new_gallery_path
+= link_to t('.new', :default => t("helpers.links.new")), new_gallery_path, :class => 'btn btn-primary'

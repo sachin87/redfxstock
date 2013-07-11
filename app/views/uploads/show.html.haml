@@ -1,12 +1,21 @@
-%p#notice= notice
+- model_class = Upload
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %b Name:
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
   = @upload.name
 %p
-  %b Gallery:
+  %strong= model_class.human_attribute_name(:gallery_id) + ':'
+  %br
   = @upload.gallery_id
+%p
+  %strong= model_class.human_attribute_name(:image) + ':'
+  %br
+  = @upload.image
 
-= link_to 'Edit', edit_upload_path(@upload)
-\|
-= link_to 'Back', uploads_path
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), uploads_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_upload_path(@upload), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), upload_path(@upload), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

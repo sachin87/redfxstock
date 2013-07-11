@@ -1,7 +1,4 @@
-%h1 Editing upload
-
-= render 'form'
-
-= link_to 'Show', @upload
-\|
-= link_to 'Back', uploads_path
+- model_class = Upload
+.page-header
+  %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human
+= render :partial => "form"

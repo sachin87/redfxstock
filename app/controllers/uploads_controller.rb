@@ -1,7 +1,7 @@
 class UploadsController < ApplicationController
 
   def index
-    @uploads = Upload.all
+    @uploads = Upload.includes(:gallery).all
   end
 
   def new

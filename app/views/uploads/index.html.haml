@@ -1,21 +1,23 @@
-%h1 Listing uploads
-
-%table
-  %tr
-    %th Name
-    %th Gallery
-    %th
-    %th
-    %th
-
-  - @uploads.each do |upload|
+- model_class = Upload
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
     %tr
-      %td= upload.name
-      %td= upload.gallery_id
-      %td= link_to 'Show', upload
-      %td= link_to 'Edit', edit_upload_path(upload)
-      %td= link_to 'Destroy', upload, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:gallery_id)
+      %th= model_class.human_attribute_name(:image)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @uploads.each do |upload|
+      %tr
+        %td= link_to upload.name, upload_path(upload)
+        %td= upload.gallery.name
+        %td= upload.image
+        %td=l upload.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_upload_path(upload), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), upload_path(upload), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
-%br
-
-= link_to 'New Upload', new_upload_path
+= link_to t('.new', :default => t("helpers.links.new")), new_upload_path, :class => 'btn btn-primary'
