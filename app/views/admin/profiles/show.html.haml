@@ -1,0 +1,29 @@
+- model_class = Profile
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human
+
+%p
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
+  = @profile.name
+%p
+  %strong= model_class.human_attribute_name(:location) + ':'
+  %br
+  = @profile.location
+%p
+  %strong= model_class.human_attribute_name(:username) + ':'
+  %br
+  = @profile.username
+%p
+  %strong= model_class.human_attribute_name(:gender) + ':'
+  %br
+  = @profile.gender
+%p
+  %strong= model_class.human_attribute_name(:dob) + ':'
+  %br
+  = @profile.dob
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), profiles_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_profile_path(@profile), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), profile_path(@profile), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

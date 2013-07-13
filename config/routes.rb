@@ -1,12 +1,23 @@
 Redfxstock::Application.routes.draw do
-  resources :galleries
 
+  devise_for :users
+
+  namespace :admin do
+    resources :galleries
+    resources :uploads
+    resources :expertises
+    resources :profiles
+    resources :roles
+    resources :categories
+    resources :home, only: :show
+    resources :users
+  end
+
+  resources :galleries
 
   resources :uploads
 
-
   resources :expertises
-
 
   resources :profiles
 
@@ -14,7 +25,7 @@ Redfxstock::Application.routes.draw do
 
   resources :categories
 
-  devise_for :users
+  resources :users
 
   root :to => "home#index"
 
@@ -60,7 +71,7 @@ Redfxstock::Application.routes.draw do
 
   # Sample resource route within a namespace:
   #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # Directs /admin/products/* to AdminClass::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end

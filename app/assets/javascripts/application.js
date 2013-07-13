@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+  //Handles menu drop down
+  $('.dropdown-menu').find('form').click(function (e) {
+    e.stopPropagation();
+  });
+
+  $('.dropdown-toggle').dropdown()
+});

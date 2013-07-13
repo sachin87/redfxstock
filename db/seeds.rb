@@ -1,42 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-['super_admin', 'admin', 'user', 'guest'].each do |role|
+Role::ROLE_HASH.values.each do |role|
   Role.create(name: role)
 end
 
 ['sachin', 'manish', 'admin', 'user', 'guest'].each do |name|
-  u = User.create(email: "#{name}@example.com", password: 'foobar', password_confirmation: 'foobar')
+  u = User.create(email: "#{name}@example.com", password: 'password', password_confirmation: 'password')
   u.confirm!
 end
 
 ['sachin', 'manish'].each do |name|
   u = User.find_by_email("#{name}@example.com")
-  u.role_id = Role.find_by_name('super_admin').id
-  u.save
+  u.user_role.destroy
+  u.create_user_role(role_id: Role.super_admin_role.id)
 end
 
 ['admin'].each do |name|
   u = User.find_by_email("#{name}@example.com")
-  u.role_id = Role.find_by_name('admin').id
-  u.save
+  u.user_role.destroy
+  u.create_user_role(role_id: Role.admin_role.id)
 end
 
 ['user'].each do |name|
   u = User.find_by_email("#{name}@example.com")
-  u.role_id = Role.find_by_name('user').id
-  u.save
+  u.user_role.destroy
+  u.create_user_role(role_id: Role.user_role.id)
 end
 
 ['guest'].each do |name|
   u = User.find_by_email("#{name}@example.com")
-  u.role_id = Role.find_by_name('guest').id
-  u.save
+  u.user_role.destroy
+  u.create_user_role(role_id: Role.guest_role.id)
 end
 
 ['Abstract', 'Animals/Wildlife', 'The Arts', 'Backgrounds/Textures', 'Beauty/Fashion', 'Buildings/Landmarks',

@@ -27,7 +27,7 @@ class RolesController < ApplicationController
     @role = Role.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new1.html.erb
       format.json { render json: @role }
     end
   end

@@ -27,7 +27,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # new1.html.erb
       format.json { render json: @gallery }
     end
   end

@@ -29,6 +29,7 @@ gem "simple_form", "~> 2.1.0"
 gem 'acts_as_commentable', '3.0.1'
 gem 'acts-as-taggable-on'
 gem 'haml-rails'
+gem "cancan"
 #gem 'dropbox-sdk'
 #gem 'dropbox'
 gem 'fog'
