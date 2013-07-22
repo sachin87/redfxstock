@@ -18,7 +18,6 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem 'uglifier', '>= 1.0.3'
-  gem "twitter-bootstrap-rails", "~> 2.2.6"
 end
 
 gem 'jquery-rails'
@@ -30,6 +29,7 @@ gem 'acts_as_commentable', '3.0.1'
 gem 'acts-as-taggable-on'
 gem 'haml-rails'
 gem "cancan"
+gem "twitter-bootstrap-rails", "~> 2.2.6"
 #gem 'dropbox-sdk'
 #gem 'dropbox'
 gem 'fog'
