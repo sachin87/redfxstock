@@ -15,7 +15,7 @@
   %tbody
     - @users.each do |user|
       %tr
-        %td= user.email, admin_user_path(user)
+        %td= link_to user.email, admin_user_path(user)
         %td= user.username
         %td= user.current_sign_in_at
         %td= user.last_sign_in_at
