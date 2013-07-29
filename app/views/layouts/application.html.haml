@@ -88,7 +88,8 @@
               %li= link_to "Users", users_path
         .span9
           = bootstrap_flash
-          = yield
+          - if !sign_in_page?
+            = yield
     
       %footer
         %p &copy; Company 2013
