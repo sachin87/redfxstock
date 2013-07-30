@@ -4,4 +4,8 @@ module ApplicationHelper
     params[:controller] == 'devise/sessions' && params[:action] == 'new'
   end
 
+  def images_for_carousel
+    1..15
+  end
+
 end

@@ -77,19 +77,27 @@
               = render 'devise/sessions/sign_in'
     .container-fluid
       .row-fluid
-        .span3
-          .well.sidebar-nav
-            %ul.nav.nav-list
-              %li.nav-header Sidebar
-              %li= link_to "Categories", categories_path
-              %li= link_to "Gallery", galleries_path
-              %li= link_to "Expertises", expertises_path
-              %li= link_to "Roles", roles_path
-              %li= link_to "Users", users_path
-        .span9
-          = bootstrap_flash
-          - if !sign_in_page?
+        - if user_signed_in?
+          .span3
+            .well.sidebar-nav
+              %ul.nav.nav-list
+                %li.nav-header Sidebar
+                %li= link_to "Categories", categories_path
+                %li= link_to "Gallery", galleries_path
+                %li= link_to "Expertises", expertises_path
+                %li= link_to "Roles", roles_path
+                %li= link_to "Users", users_path
+          .span9
+            = bootstrap_flash
             = yield
+        - else
+          = bootstrap_flash
+          - if sign_in_page?
+            = yield :slider
+          - else
+            = yield
+
+
     
       %footer
         %p &copy; Company 2013
