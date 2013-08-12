@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def images_for_carousel
-    1..15
+    1..7
   end
 
 end

@@ -49,7 +49,7 @@ gem 'fog'
 
 group :test, :development do
   gem 'debugger'
-  #gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 
