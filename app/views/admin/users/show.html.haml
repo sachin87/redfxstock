@@ -1,82 +1,62 @@
-- model_class = User
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human
+  %h1=t '.title', :default => 'User'
 
 %p
-  %strong= model_class.human_attribute_name(:email) + ':'
-  %br
+  %strong Email:
   = @resource.email
 %p
-  %strong= model_class.human_attribute_name(:username) + ':'
-  %br
+  %strong UserName:
   = @resource.username
 %p
-  %strong= model_class.human_attribute_name(:encrypted_password) + ':'
-  %br
+  %strong Encrypted Password:
   = @resource.encrypted_password
 %p
-  %strong= model_class.human_attribute_name(:role_id) + ':'
-  %br
-  = @resource.role_id
+  %strong Role:
+  = @resource.role_name
 %p
-  %strong= model_class.human_attribute_name(:reset_password_token) + ':'
-  %br
+  %strong Reset Password Token:
   = @resource.reset_password_token
 %p
-  %strong= model_class.human_attribute_name(:reset_password_sent_at) + ':'
-  %br
+  %strong Reset Password Sent At:
   = @resource.reset_password_sent_at
 %p
-  %strong= model_class.human_attribute_name(:remember_created_at) + ':'
-  %br
+  %strong Remember Created At:
   = @resource.remember_created_at
 %p
-  %strong= model_class.human_attribute_name(:current_sign_in_at) + ':'
-  %br
+  %strong Current SignIn At:
   = @resource.current_sign_in_at
 %p
-  %strong= model_class.human_attribute_name(:last_sign_in_at) + ':'
-  %br
+  %strong Last SignIn At:
   = @resource.last_sign_in_at
 %p
-  %strong= model_class.human_attribute_name(:current_sign_in_ip) + ':'
-  %br
+  %strong Current SignIn IP:
   = @resource.current_sign_in_ip
 %p
-  %strong= model_class.human_attribute_name(:last_sign_in_ip) + ':'
-  %br
+  %strong Last SignIn IP:
   = @resource.last_sign_in_ip
 %p
-  %strong= model_class.human_attribute_name(:confirmation_token) + ':'
-  %br
+  %strong Confirmation Token:
   = @resource.confirmation_token
 %p
-  %strong= model_class.human_attribute_name(:confirmed_at) + ':'
-  %br
+  %strong Confirmed At:
   = @resource.confirmed_at
 %p
-  %strong= model_class.human_attribute_name(:confirmation_sent_at) + ':'
-  %br
+  %strong Confirmation Sent At:
   = @resource.confirmation_sent_at
 %p
-  %strong= model_class.human_attribute_name(:unconfirmed_email) + ':'
-  %br
+  %strong Unconfirmed Email:
   = @resource.unconfirmed_email
 %p
-  %strong= model_class.human_attribute_name(:failed_attempts) + ':'
-  %br
+  %strong Failed Attempts:
   = @resource.failed_attempts
 %p
-  %strong= model_class.human_attribute_name(:unlock_token) + ':'
-  %br
+  %strong Unlock Token:
   = @resource.unlock_token
 %p
-  %strong= model_class.human_attribute_name(:locked_at) + ':'
-  %br
+  %strong Locked At:
   = @resource.locked_at
 %p
-  %strong= model_class.human_attribute_name(:authentication_token) + ':'
-  %br
+  %strong Authentication Token:
   = @resource.authentication_token
 
 .form-actions

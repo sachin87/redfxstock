@@ -4,39 +4,39 @@ class Admin::AdminController < ::ApplicationController
 
   respond_to :html, :json
 
-  before_action :verify_admin
-  before_action :load_resource, except: [:index, :new, :create]
+  before_filter :verify_admin
+  before_filter :load_resource, except: [:index, :new, :create]
 
   def index
     @resources = klass.all
-    respond_with(@resources)
+    respond_with([:admin, @resource])
   end
 
   def new
     @resource = klass.new
-    respond_with(@resource)
+    respond_with([:admin, @resource])
   end
 
   def create
-    @resource = klass.new(params[@model_name])
+    @resource = klass.new(params[params_attr])
     @resource.save
-    respond_with(@resource)
+    respond_with([:admin, @resource])
   end
 
   def edit
-    respond_with(@resource)
+    respond_with([:admin, @resource])
   end
 
   alias_method :show, :edit
 
   def update
-    @resource.update_attributes((params[@model_name]))
-    respond_with(@resource)
+    @resource.update_attributes((params[params_attr]))
+    respond_with([:admin, @resource])
   end
 
   def destroy
     @resource.destroy
-    respond_with(@resource)
+    respond_with([:admin, @resource])
   end
 
   private
@@ -47,6 +47,10 @@ class Admin::AdminController < ::ApplicationController
 
     def model_name_symbolized
       @model_name ||= params[:controller].split('/').last.singularize.capitalize
+    end
+
+    def params_attr
+      @params_attr ||= params[:controller].split('/').last.singularize.downcase
     end
 
     def load_resource

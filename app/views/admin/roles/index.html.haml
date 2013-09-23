@@ -1,18 +1,15 @@
-- model_class = Role
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize
+  %h1=t '.title', :default => 'Role'
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:created_at)
+      %th Name
+      %th Created At
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @resources.each do |role|
       %tr
-        %td= link_to role.id, role_path(role)
-        %td= role.name
+        %td= link_to role.name, role_path(role)
         %td=l role.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_role_path(role), :class => 'btn btn-mini'

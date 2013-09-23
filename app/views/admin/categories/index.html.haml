@@ -14,7 +14,7 @@
       %tr
         %td= link_to category.id, category_path(category)
         %td= category.name
-        %td= category.parent_id
+        %td= category.parent_name
         %td=l category.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_category_path(category), :class => 'btn btn-mini'
