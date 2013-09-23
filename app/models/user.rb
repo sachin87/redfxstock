@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def moderator?
+    super_admin? || admin?
+  end
+
   private
 
     def set_role

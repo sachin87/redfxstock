@@ -1,85 +1,65 @@
-- model_class = User
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human
+  %h1=t '.title', :default => 'User'
 
 %p
-  %strong= model_class.human_attribute_name(:email) + ':'
-  %br
-  = @user.email
+  %strong Email:
+  = @resource.email
 %p
-  %strong= model_class.human_attribute_name(:username) + ':'
-  %br
-  = @user.username
+  %strong UserName:
+  = @resource.username
 %p
-  %strong= model_class.human_attribute_name(:encrypted_password) + ':'
-  %br
-  = @user.encrypted_password
+  %strong Encrypted Password:
+  = @resource.encrypted_password
 %p
-  %strong= model_class.human_attribute_name(:role_id) + ':'
-  %br
-  = @user.role_id
+  %strong Role:
+  = @resource.role_name
 %p
-  %strong= model_class.human_attribute_name(:reset_password_token) + ':'
-  %br
-  = @user.reset_password_token
+  %strong Reset Password Token:
+  = @resource.reset_password_token
 %p
-  %strong= model_class.human_attribute_name(:reset_password_sent_at) + ':'
-  %br
-  = @user.reset_password_sent_at
+  %strong Reset Password Sent At:
+  = @resource.reset_password_sent_at
 %p
-  %strong= model_class.human_attribute_name(:remember_created_at) + ':'
-  %br
-  = @user.remember_created_at
+  %strong Remember Created At:
+  = @resource.remember_created_at
 %p
-  %strong= model_class.human_attribute_name(:current_sign_in_at) + ':'
-  %br
-  = @user.current_sign_in_at
+  %strong Current SignIn At:
+  = @resource.current_sign_in_at
 %p
-  %strong= model_class.human_attribute_name(:last_sign_in_at) + ':'
-  %br
-  = @user.last_sign_in_at
+  %strong Last SignIn At:
+  = @resource.last_sign_in_at
 %p
-  %strong= model_class.human_attribute_name(:current_sign_in_ip) + ':'
-  %br
-  = @user.current_sign_in_ip
+  %strong Current SignIn IP:
+  = @resource.current_sign_in_ip
 %p
-  %strong= model_class.human_attribute_name(:last_sign_in_ip) + ':'
-  %br
-  = @user.last_sign_in_ip
+  %strong Last SignIn IP:
+  = @resource.last_sign_in_ip
 %p
-  %strong= model_class.human_attribute_name(:confirmation_token) + ':'
-  %br
-  = @user.confirmation_token
+  %strong Confirmation Token:
+  = @resource.confirmation_token
 %p
-  %strong= model_class.human_attribute_name(:confirmed_at) + ':'
-  %br
-  = @user.confirmed_at
+  %strong Confirmed At:
+  = @resource.confirmed_at
 %p
-  %strong= model_class.human_attribute_name(:confirmation_sent_at) + ':'
-  %br
-  = @user.confirmation_sent_at
+  %strong Confirmation Sent At:
+  = @resource.confirmation_sent_at
 %p
-  %strong= model_class.human_attribute_name(:unconfirmed_email) + ':'
-  %br
-  = @user.unconfirmed_email
+  %strong Unconfirmed Email:
+  = @resource.unconfirmed_email
 %p
-  %strong= model_class.human_attribute_name(:failed_attempts) + ':'
-  %br
-  = @user.failed_attempts
+  %strong Failed Attempts:
+  = @resource.failed_attempts
 %p
-  %strong= model_class.human_attribute_name(:unlock_token) + ':'
-  %br
-  = @user.unlock_token
+  %strong Unlock Token:
+  = @resource.unlock_token
 %p
-  %strong= model_class.human_attribute_name(:locked_at) + ':'
-  %br
-  = @user.locked_at
+  %strong Locked At:
+  = @resource.locked_at
 %p
-  %strong= model_class.human_attribute_name(:authentication_token) + ':'
-  %br
-  = @user.authentication_token
+  %strong Authentication Token:
+  = @resource.authentication_token
 
 .form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), users_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_user_path(@user), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), user_path(@user), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+  = link_to t('.back', :default => t("helpers.links.back")), admin_users_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_user_path(@resource), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_user_path(@resource), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
