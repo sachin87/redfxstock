@@ -3,63 +3,12 @@
 
 %p
   %strong Email:
-  = @resource.email
+  = @user.email
 %p
   %strong UserName:
-  = @resource.username
-%p
-  %strong Encrypted Password:
-  = @resource.encrypted_password
-%p
-  %strong Role:
-  = @resource.role_name
-%p
-  %strong Reset Password Token:
-  = @resource.reset_password_token
-%p
-  %strong Reset Password Sent At:
-  = @resource.reset_password_sent_at
-%p
-  %strong Remember Created At:
-  = @resource.remember_created_at
-%p
-  %strong Current SignIn At:
-  = @resource.current_sign_in_at
-%p
-  %strong Last SignIn At:
-  = @resource.last_sign_in_at
-%p
-  %strong Current SignIn IP:
-  = @resource.current_sign_in_ip
-%p
-  %strong Last SignIn IP:
-  = @resource.last_sign_in_ip
-%p
-  %strong Confirmation Token:
-  = @resource.confirmation_token
-%p
-  %strong Confirmed At:
-  = @resource.confirmed_at
-%p
-  %strong Confirmation Sent At:
-  = @resource.confirmation_sent_at
-%p
-  %strong Unconfirmed Email:
-  = @resource.unconfirmed_email
-%p
-  %strong Failed Attempts:
-  = @resource.failed_attempts
-%p
-  %strong Unlock Token:
-  = @resource.unlock_token
-%p
-  %strong Locked At:
-  = @resource.locked_at
-%p
-  %strong Authentication Token:
-  = @resource.authentication_token
+  = @user.username
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), admin_users_path, :class => 'btn'
-  - if current_user == @resource
-    = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_user_path(@resource), :class => 'btn'
+  - if current_user == @user
+    = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_user_path(@user), :class => 'btn'

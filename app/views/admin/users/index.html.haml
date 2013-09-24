@@ -4,15 +4,15 @@
 %table.table.table-striped
   %thead
     %tr
-      %th Email
       %th UserName
+      %th Email
       %th Created At
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @resources.each do |user|
       %tr
-        %td= link_to(user.email, admin_user_path(user))
-        %td= user.username
+        %td= link_to(user.username, admin_user_path(user))
+        %td= user.email
         %td=l user.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_user_path(user), :class => 'btn btn-mini'

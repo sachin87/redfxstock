@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
       user_role.present?
     end
 
+    def password_required?
+      new_record? || password.present? || password_confirmation.present? ? super : false
+    end
+
 end
