@@ -13,7 +13,7 @@
   %tbody
     - @profiles.each do |profile|
       %tr
-        %td= link_to profile.name, profile_path(profile)
+        %td= link_to profile.name, admin_profile_path(profile)
         %td= profile.location
         %td= profile.username
         %td= profile.gender

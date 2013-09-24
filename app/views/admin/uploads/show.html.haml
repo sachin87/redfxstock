@@ -1,19 +1,18 @@
-- model_class = Upload
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human
+  %h1=t '.title', :default => 'Upload'
 
 %p
-  %strong= model_class.human_attribute_name(:name) + ':'
+  %strong Name:
   %br
   = @resource.name
 %p
-  %strong= model_class.human_attribute_name(:gallery_id) + ':'
+  %strong Gallery:
   %br
-  = @resource.gallery_id
+  = @resource.gallery_name
 %p
-  %strong= model_class.human_attribute_name(:image) + ':'
+  %strong Image
   %br
-  = @resource.image
+  = image_tag @resource.image
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), admin_uploads_path, :class => 'btn'

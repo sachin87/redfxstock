@@ -10,7 +10,7 @@
   %tbody
     - @resources.each do |category|
       %tr
-        %td= link_to category.name, category_path(category)
+        %td= link_to category.name, admin_category_path(category)
         %td= category.parent_name
         %td=l category.created_at
         %td

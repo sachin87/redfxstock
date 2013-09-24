@@ -10,7 +10,7 @@
   %tbody
     - @resources.each do |gallery|
       %tr
-        %td= link_to gallery.name, gallery_path(gallery)
+        %td= link_to gallery.name, admin_gallery_path(gallery)
         %td=l gallery.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_gallery_path(gallery), :class => 'btn btn-mini'

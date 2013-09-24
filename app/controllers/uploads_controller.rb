@@ -18,6 +18,10 @@ class UploadsController < ApplicationController
     end
   end
 
+  def show
+    @upload = Upload.find(params[:id])
+  end
+
   def edit
     @upload = Upload.find(params[:id])
   end

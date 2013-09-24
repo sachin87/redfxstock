@@ -12,7 +12,7 @@
   %tbody
     - @resources.each do |upload|
       %tr
-        %td= link_to upload.name, upload_path(upload)
+        %td= link_to upload.name, admin_upload_path(upload)
         %td= upload.gallery.name
         %td= upload.image
         %td=l upload.created_at

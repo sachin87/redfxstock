@@ -1,13 +1,12 @@
-- model_class = Upload
 .page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize
+  %h1=t '.title', :default => 'Upload'
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:gallery_id)
-      %th= model_class.human_attribute_name(:image)
-      %th= model_class.human_attribute_name(:created_at)
+      %th Name
+      %th Gallery
+      %th Image
+      %th Created At
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @uploads.each do |upload|

@@ -10,7 +10,7 @@
   %tbody
     - @resources.each do |expertise|
       %tr
-        %td= link_to expertise.name, expertise_path(expertise)
+        %td= link_to expertise.name, admin_expertise_path(expertise)
         %td=l expertise.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_expertise_path(expertise), :class => 'btn btn-mini'

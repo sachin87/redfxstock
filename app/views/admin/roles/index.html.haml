@@ -9,7 +9,7 @@
   %tbody
     - @resources.each do |role|
       %tr
-        %td= link_to role.name, role_path(role)
+        %td= link_to role.name, admin_role_path(role)
         %td=l role.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_role_path(role), :class => 'btn btn-mini'

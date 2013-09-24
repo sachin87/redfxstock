@@ -1,6 +1,6 @@
 = simple_form_for [:admin, @resource], :html => { :class => 'form-horizontal' } do |f|
   = f.input :name
-  = f.input :gallery_id
+  = f.association :gallery
   = f.input :image
   .form-actions
     = f.button :submit, :class => 'btn-primary'

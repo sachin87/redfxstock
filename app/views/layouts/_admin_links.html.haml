@@ -1,4 +1,4 @@
 %li.nav-header Admin Section
 - ADMIN_SECTIONS.each do |section|
-  %li= link_to(section, eval("#{section.downcase}_path"))
+  %li= link_to(section, eval("admin_#{section.downcase}_path"))
 

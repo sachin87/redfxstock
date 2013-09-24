@@ -4,4 +4,10 @@ class Upload < ActiveRecord::Base
   belongs_to :gallery
 
   mount_uploader :image, ImageUploader
+
+
+  def gallery_name
+    @gallery_name ||= gallery.name
+  end
+
 end
