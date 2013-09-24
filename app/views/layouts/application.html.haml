@@ -54,12 +54,14 @@
                   Permissions
               %li.divider-vertical
             %ul.nav.pull-right
-              %li
-                %a{:href => "/signup"} Sign Up
+              - unless user_signed_in?
+                %li
+                  = link_to 'Sign Up', "/signup"
               %li.divider-vertical
               %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  Sign In
+                - unless user_signed_in?
+                  = link_to "#", "data-toggle" => "dropdown", class: "dropdown-toggle" do
+                    Sign In
                   %strong.caret
                 .dropdown-menu{:style => "padding: 15px; padding-bottom: 0px;"}
                   = render 'devise/sessions/sign_in'
