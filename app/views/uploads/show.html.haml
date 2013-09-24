@@ -3,18 +3,14 @@
 
 %p
   %strong Name:
-  %br
   = @upload.name
 %p
   %strong Gallery:
-  %br
   = @upload.gallery_name
 %p
-  %strong Image
-  %br
+  %strong Image:
   = image_tag @upload.image
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), uploads_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_upload_path(@upload), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), upload_path(@upload), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

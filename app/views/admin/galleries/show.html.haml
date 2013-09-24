@@ -3,8 +3,7 @@
   %h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %strong= model_class.human_attribute_name(:name) + ':'
-  %br
+  %strong Name:
   = @resource.name
 
 .form-actions

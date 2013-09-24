@@ -3,24 +3,19 @@
   %h1=t '.title', :default => model_class.model_name.human
 
 %p
-  %strong= model_class.human_attribute_name(:name) + ':'
-  %br
+  %strong Name:
   = @profile.name
 %p
-  %strong= model_class.human_attribute_name(:location) + ':'
-  %br
+  %strong Location:
   = @profile.location
 %p
-  %strong= model_class.human_attribute_name(:username) + ':'
-  %br
+  %strong UserName:
   = @profile.username
 %p
-  %strong= model_class.human_attribute_name(:gender) + ':'
-  %br
+  %strong Gender:
   = @profile.gender
 %p
-  %strong= model_class.human_attribute_name(:dob) + ':'
-  %br
+  %strong DOB:
   = @profile.dob
 
 .form-actions
