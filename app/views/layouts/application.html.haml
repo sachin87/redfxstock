@@ -66,10 +66,12 @@
                 .dropdown-menu{:style => "padding: 15px; padding-bottom: 0px;"}
                   = render 'devise/sessions/sign_in'
       .container-fluid
-        = render 'layouts/side_bar_menu'
-        .span9
-          = bootstrap_flash
-          = yield
+        .row
+          .span3
+            = render 'layouts/side_bar_menu'
+          .span9
+            = bootstrap_flash
+            = yield
 
       %footer
         %p &copy; Company 2013

@@ -1,10 +1,9 @@
 .row-fluid
-  .span3
-    .well.sidebar-nav
-      %ul.nav.nav-list
-        - if current_user && current_user.moderator?
-          = render 'layouts/admin_links'
-          = render 'layouts/user_links'
-        - else
-          = render 'layouts/user_links'
+  .well.sidebar-nav
+    %ul.nav.nav-list
+      - if current_user && current_user.moderator?
+        = render 'layouts/admin_links'
+        = render 'layouts/user_links'
+      - else
+        = render 'layouts/user_links'
 

@@ -13,8 +13,7 @@
         %td= link_to category.name, category_path(category)
         %td= category.parent_id
         %td=l category.created_at
-        %td
-          = link_to t('.edit', :default => t("helpers.links.edit")), edit_category_path(category), :class => 'btn btn-mini'
+        %td= link_to t('.edit', :default => t("helpers.links.edit")), edit_category_path(category), :class => 'btn btn-mini'
 
 = paginate @categories
 
