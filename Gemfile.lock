@@ -31,6 +31,8 @@ GEM
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
     acts_as_commentable (3.0.1)
+    ancestry (2.0.0)
+      activerecord (>= 3.0.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -182,6 +184,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   acts_as_commentable (= 3.0.1)
+  ancestry
   cancan
   carrierwave (~> 0.8.0)
   coffee-rails (~> 3.2.1)

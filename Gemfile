@@ -35,6 +35,7 @@ gem 'kaminari'
 #gem 'dropbox'
 gem 'fog'
 gem 'squeel'
+gem 'ancestry'
 #gem 'carrierwave_direct'
 #gem 'sidekiq'
 # To use ActiveModel has_secure_password
