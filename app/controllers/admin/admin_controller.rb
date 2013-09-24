@@ -8,7 +8,7 @@ class Admin::AdminController < ::ApplicationController
   before_filter :load_resource, except: [:index, :new, :create]
 
   def index
-    @resources = klass.all
+    @resources = klass.page params[:page]
     respond_with([:admin, @resource])
   end
 

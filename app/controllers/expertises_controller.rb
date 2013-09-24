@@ -2,7 +2,7 @@ class ExpertisesController < ApplicationController
   # GET /expertises
   # GET /expertises.json
   def index
-    @expertises = Expertise.all
+    @expertises = Expertise.page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

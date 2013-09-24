@@ -30,6 +30,7 @@ gem 'acts-as-taggable-on'
 gem 'haml-rails'
 gem "cancan"
 gem "twitter-bootstrap-rails", "~> 2.2.6"
+gem 'kaminari'
 #gem 'dropbox-sdk'
 #gem 'dropbox'
 gem 'fog'

@@ -4,18 +4,18 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:created_at)
+      %th Name
+      %th Created At
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @resources.each do |expertise|
       %tr
-        %td= link_to expertise.id, expertise_path(expertise)
-        %td= expertise.name
+        %td= link_to expertise.name, expertise_path(expertise)
         %td=l expertise.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_expertise_path(expertise), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_expertise_path(expertise), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= paginate @resources
 
 = link_to t('.new', :default => t("helpers.links.new")), new_admin_expertise_path, :class => 'btn btn-primary'
