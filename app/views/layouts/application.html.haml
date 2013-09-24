@@ -75,16 +75,16 @@
               %li.divider-vertical
             %ul.nav.pull-right
               = render 'devise/sessions/sign_in'
-      .container-fluid
-        .row
-          .span3
-            = render 'layouts/side_bar_menu'
-          .span9
-            = bootstrap_flash
-            - if sign_in_page?
-              = yield :slider
-            - else
-              = yield
+    .container-fluid
+      .row
+        .span3
+          = render 'layouts/side_bar_menu'
+        .span9
+          = bootstrap_flash
+          - if sign_in_page?
+            = yield :slider
+          - else
+            = yield
 
       %footer
         %p &copy; Company 2013
