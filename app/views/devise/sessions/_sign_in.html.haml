@@ -28,7 +28,7 @@
       %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
     / Wrapper for slides
     .carousel-inner
-      = images_for_carousel.each do |item|
+      - images_for_carousel.each do |item|
         - if item == 1
           .item.active
             = image_tag("slide#{item}.jpg", :alt => "image_#{item}")

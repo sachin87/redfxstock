@@ -48,30 +48,43 @@
                   %i.icon-signal
                   Stats
               %li.divider-vertical
-              %li
-                %a{:href => "#"}
-                  %i.icon-lock
-                  Permissions
+              %li.dropdown
+                = link_to '#', data: { target: '#', toggle: 'dropdown', role: 'button' }, class: '.dropdown-toggle', id: 'dLlabel' do
+                  Admin
+                  %b.caret
+                %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
+                  = link_to admin_categories_path do
+                    %i.icon-lock
+                    Categories
+                  %br
+                  = link_to admin_expertises_path do
+                    %i.icon-lock
+                    Gallery
+                  %br
+                  = link_to admin_expertises_path do
+                    %i.icon-lock
+                    Expertises
+                  %br
+                  = link_to admin_roles_path do
+                    %i.icon-lock
+                    Roles
+                  %br
+                  = link_to admin_users_path do
+                    %i.icon-lock
+                    Users
               %li.divider-vertical
             %ul.nav.pull-right
-              - unless user_signed_in?
-                %li
-                  = link_to 'Sign Up', "/signup"
-              %li.divider-vertical
-              %li.dropdown
-                - unless user_signed_in?
-                  = link_to "#", "data-toggle" => "dropdown", class: "dropdown-toggle" do
-                    Sign In
-                  %strong.caret
-                .dropdown-menu{:style => "padding: 15px; padding-bottom: 0px;"}
-                  = render 'devise/sessions/sign_in'
+              = render 'devise/sessions/sign_in'
       .container-fluid
         .row
           .span3
             = render 'layouts/side_bar_menu'
           .span9
             = bootstrap_flash
-            = yield
+            - if sign_in_page?
+              = yield :slider
+            - else
+              = yield
 
       %footer
         %p &copy; Company 2013
