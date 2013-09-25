@@ -1,5 +1,7 @@
 .page-header.row
   %h1=t '.title', :default => 'Profile'
+  = paginate @profiles
+
 %table.table.table-striped
   %thead
     %tr

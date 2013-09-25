@@ -3,7 +3,7 @@ class UploadsController < ApplicationController
   before_filter :load_upload, only: [:edit, :update, :destroy]
 
   def index
-    @uploads = Upload.includes(:gallery).all
+    @uploads = Upload.includes(:gallery).page params[:page]
   end
 
   def new
