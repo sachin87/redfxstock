@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924141222) do
+ActiveRecord::Schema.define(:version => 20130925053839) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130924141222) do
   end
 
   add_index "categories", ["ancestry"], :name => "index_categories_on_ancestry"
+  add_index "categories", ["name"], :name => "index_categories_on_name"
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130924141222) do
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["title"], :name => "index_comments_on_title"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "expertises", :force => true do |t|
@@ -43,11 +45,15 @@ ActiveRecord::Schema.define(:version => 20130924141222) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "expertises", ["name"], :name => "index_expertises_on_name"
+
   create_table "galleries", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "galleries", ["name"], :name => "index_galleries_on_name"
 
   create_table "profiles", :force => true do |t|
     t.string   "name"
@@ -59,11 +65,19 @@ ActiveRecord::Schema.define(:version => 20130924141222) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "profiles", ["dob"], :name => "index_profiles_on_dob"
+  add_index "profiles", ["gender"], :name => "index_profiles_on_gender"
+  add_index "profiles", ["location"], :name => "index_profiles_on_location"
+  add_index "profiles", ["name"], :name => "index_profiles_on_name"
+  add_index "profiles", ["username"], :name => "index_profiles_on_username"
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
@@ -82,6 +96,8 @@ ActiveRecord::Schema.define(:version => 20130924141222) do
     t.string "name"
   end
 
+  add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
+
   create_table "uploads", :force => true do |t|
     t.string   "name"
     t.integer  "gallery_id"
@@ -90,12 +106,19 @@ ActiveRecord::Schema.define(:version => 20130924141222) do
     t.string   "image"
   end
 
+  add_index "uploads", ["gallery_id"], :name => "index_uploads_on_gallery_id"
+  add_index "uploads", ["name"], :name => "index_uploads_on_name"
+
   create_table "user_roles", :force => true do |t|
     t.integer  "role_id"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "user_roles", ["role_id"], :name => "index_user_roles_on_role_id"
+  add_index "user_roles", ["user_id", "role_id"], :name => "index_user_roles_on_user_id_and_role_id"
+  add_index "user_roles", ["user_id"], :name => "index_user_roles_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -123,5 +146,6 @@ ActiveRecord::Schema.define(:version => 20130924141222) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end
