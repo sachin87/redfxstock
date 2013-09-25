@@ -5,9 +5,7 @@ class Category < ActiveRecord::Base
   has_ancestry
 
   def parent_name
-    if parent_id
-      Category.find(parent_id).name
-    end
+    parent.try(:name)
   end
 
 end
