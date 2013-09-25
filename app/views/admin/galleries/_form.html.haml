@@ -1,5 +1,5 @@
 = simple_form_for [:admin, @resource], :html => { :class => 'form-horizontal' } do |f|
   = f.input :name
-  .form-actions
-    = f.button :submit, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_galleries_path, :class => 'btn'
+  %br
+  = f.button :submit, :class => 'btn btn-primary'
+  = link_to('Cancel', admin_galleries_path, :class => 'btn')

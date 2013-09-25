@@ -12,4 +12,8 @@ class Upload < ActiveRecord::Base
     @gallery_name ||= gallery.name
   end
 
+  def user_name
+    @user_name ||= user.try(:name)
+  end
+
 end

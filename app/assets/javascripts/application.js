@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+// This is a manifest file  be compiled into application.js, which will include all the files
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require twitter/bootstrap
 //= require chosen-jquery
 //= require_tree .
@@ -25,5 +26,11 @@ $(document).ready(function(){
   $('.dropdown-toggle').dropdown()
 
   $('.carousel').carousel()
+
+  $('.datepicker').datepicker({
+      showButtonPanel: true,
+      showWeek: true,
+      firstDay: 1
+  });
 
 });

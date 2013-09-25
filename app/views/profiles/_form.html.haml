@@ -3,7 +3,7 @@
   = f.input :location
   = f.input :username
   = f.input :gender
-  = f.input :dob
+  = f.input :dob, as: :string, input_html: { class: 'datepicker' }
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), profiles_path, :class => 'btn'

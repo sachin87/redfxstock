@@ -1,6 +1,6 @@
 class UploadsController < ApplicationController
 
-  before_filter :load_resource, only: [:edit, :update, :destroy]
+  before_filter :load_upload, only: [:edit, :update, :destroy]
 
   def index
     @uploads = Upload.includes(:gallery).all

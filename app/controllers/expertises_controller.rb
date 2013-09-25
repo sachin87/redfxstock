@@ -1,4 +1,7 @@
 class ExpertisesController < ApplicationController
+
+  respond_to :html, :json
+
   # GET /expertises
   # GET /expertises.json
   def index

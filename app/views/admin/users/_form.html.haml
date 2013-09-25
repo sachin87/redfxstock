@@ -4,6 +4,6 @@
   = f.input :password
   = f.input :password_confirmation
   = f.input :user_role
-  .form-actions
-    = f.button :submit, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn'
+  %br
+  = f.button :submit, :class => 'btn btn-primary'
+  = link_to('Cancel', admin_users_path, :class => 'btn')

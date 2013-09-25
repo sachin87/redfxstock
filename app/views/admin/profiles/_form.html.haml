@@ -2,8 +2,8 @@
   = f.input :name
   = f.input :location
   = f.input :username
-  = f.input :gender
-  = f.input :dob
-  .form-actions
-    = f.button :submit, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), profiles_path, :class => 'btn'
+  = f.input :gender, collection: GENDER, input_html: { class: 'chosen-select' }
+  = f.input :dob, as: :string, input_html: { class: 'datepicker' }
+  %br
+  = f.button :submit, :class => 'btn btn-primary'
+  = link_to t('Cancel', admin_profiles_path, :class => 'btn')

@@ -10,6 +10,9 @@
 %p
   %strong Image:
   = image_tag @upload.image
+%p
+  %strong Owner:
+  = image_tag @upload.user_name
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), uploads_path, :class => 'btn'
