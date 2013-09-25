@@ -1,5 +1,8 @@
 .page-header.row
   %h1=t '.title', :default => 'Gallery'
+
+= paginate @galleries
+
 %table.table.table-striped
   %thead
     %tr

@@ -19,6 +19,6 @@
   = @profile.dob
 
 .form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), profiles_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_profile_path(@profile), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), profile_path(@profile), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+  = link_to('Back', admin_profiles_path, :class => 'btn')
+  = link_to('Edit', edit_sdmin_profile_path(@profile), :class => 'btn')
+  = link_to('Delete', admin_profile_path(@profile), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger')

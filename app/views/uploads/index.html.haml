@@ -1,7 +1,9 @@
 .page-header.row
   %h1=t '.title', :default => 'Upload'
   = link_to('New Gallery', new_upload_path, :class => 'btn btn-primary pull-right')
-  = paginate @uploads
+
+= paginate @uploads
+
 %table.table.table-striped
   %thead
     %tr

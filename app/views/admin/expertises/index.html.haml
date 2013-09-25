@@ -1,13 +1,16 @@
 .page-header
   .row
     %h1=t '.title', :default => 'Expertise'
-    = link_to t('.new', :default => t("helpers.links.new")), new_admin_expertise_path, :class => 'btn btn-primary pull-right'
+    = link_to('New Expertise', new_admin_expertise_path, :class => 'btn btn-primary pull-right')
+
+= paginate @resources
+
 %table.table.table-striped
   %thead
     %tr
       %th Name
       %th Created At
-      %th=t '.actions', :default => t("helpers.actions")
+      %th Action
   %tbody
     - @resources.each do |expertise|
       %tr

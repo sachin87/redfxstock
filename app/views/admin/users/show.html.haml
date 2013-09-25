@@ -60,6 +60,6 @@
   = @resource.authentication_token
 
 .form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), admin_users_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_user_path(@resource), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_user_path(@resource), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+  = link_to('Back', admin_users_path, :class => 'btn')
+  = link_to('Edit', edit_admin_user_path(@resource), :class => 'btn')
+  = link_to('Delete', admin_user_path(@resource), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger')

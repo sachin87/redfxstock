@@ -1,5 +1,8 @@
 .page-header.row
   %h1=t '.title', :default => 'Category'
+
+= paginate @categories
+
 %table.table.table-striped
   %thead
     %tr

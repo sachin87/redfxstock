@@ -1,12 +1,11 @@
 .page-header
   .row
     %h1=t '.title', :default => 'Upload'
-    = link_to t('.new', :default => t("helpers.links.new")), new_admin_upload_path, :class => 'btn btn-primary pull-right'
+    = link_to('New Upload', new_admin_upload_path, :class => 'btn btn-primary pull-right')
 %table.table.table-striped
   %thead
     %tr
       %th Name
-      %th Gallery Name
       %th Image
       %th Created At
       %th Actions
@@ -14,8 +13,7 @@
     - @resources.each do |upload|
       %tr
         %td= link_to upload.name, admin_upload_path(upload)
-        %td= upload.gallery.name
-        %td= upload.image
+        %td= image_tag upload.image
         %td=l upload.created_at
         %td
           = link_to('Edit', edit_admin_upload_path(upload), :class => 'btn btn-mini')

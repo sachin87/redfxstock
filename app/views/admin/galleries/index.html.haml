@@ -1,7 +1,7 @@
 .page-header
   .row
     %h1=t '.title', :default => 'Gallery'
-    = link_to t('.new', :default => t("helpers.links.new")), new_admin_gallery_path, :class => 'btn btn-primary pull-right'
+    = link_to('New Gallery', new_admin_gallery_path, :class => 'btn btn-primary pull-right')
 %table.table.table-striped
   %thead
     %tr
