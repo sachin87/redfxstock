@@ -36,6 +36,7 @@ gem 'kaminari'
 gem 'fog'
 gem 'squeel'
 gem 'ancestry'
+gem 'chosen-rails'
 #gem 'carrierwave_direct'
 #gem 'sidekiq'
 # To use ActiveModel has_secure_password

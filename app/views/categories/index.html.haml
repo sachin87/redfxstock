@@ -4,17 +4,13 @@
   %thead
     %tr
       %th Name
-      %th parent Id
+      %th Parent Category
       %th Created At
-      %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @categories.each do |category|
       %tr
         %td= link_to category.name, category_path(category)
         %td= category.parent_id
         %td=l category.created_at
-        %td= link_to t('.edit', :default => t("helpers.links.edit")), edit_category_path(category), :class => 'btn btn-mini'
 
 = paginate @categories
-
-= link_to t('.new', :default => t("helpers.links.new")), new_category_path, :class => 'btn btn-primary'
