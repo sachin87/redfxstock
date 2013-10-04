@@ -2,8 +2,9 @@ Role::ROLE_HASH.values.each do |role|
   Role.create(name: role)
 end
 
-['sachin', 'manish', 'admin', 'user', 'guest'].each do |name|
-  u = User.create(email: "#{name}@example.com", password: 'password', password_confirmation: 'password')
+['sachin', 'manish', 'admin', 'user', 'guest'].each do |name|                           ;
+  u = User.create(email: "#{name}@example.com", password: 'password',
+                  password_confirmation: 'password', username: name)
   u.confirm!
 end
 
