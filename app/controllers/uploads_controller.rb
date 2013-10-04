@@ -14,14 +14,14 @@ class UploadsController < ApplicationController
     @upload = current_user.uploads.new(params[:upload])
     if @upload.save
       flash[:notice] = "Successfully created upload."
-      redirect_to @upload.gallery
+      redirect_to @upload
     else
       render :action => 'new'
     end
   end
 
   def show
-    @upload = Upload.find(params[:id])
+    @upload = Upload.includes(:gallery).find(params[:id])
   end
 
   def edit
@@ -30,7 +30,7 @@ class UploadsController < ApplicationController
   def update
     if @upload.update_attributes(params[:upload])
       flash[:notice] = "Successfully updated upload."
-      redirect_to @upload.gallery
+      redirect_to @upload
     else
       render :action => 'edit'
     end

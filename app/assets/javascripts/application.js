@@ -15,6 +15,7 @@
 //= require jquery.ui.all
 //= require twitter/bootstrap
 //= require chosen-jquery
+//= require jquery-fileupload
 //= require_tree .
 
 $(document).ready(function(){
@@ -32,5 +33,7 @@ $(document).ready(function(){
       showWeek: true,
       firstDay: 1
   });
+
+  $('#jquery-form').fileupload();
 
 });

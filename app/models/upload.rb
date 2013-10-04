@@ -7,7 +7,6 @@ class Upload < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-
   def gallery_name
     @gallery_name ||= gallery.name
   end
