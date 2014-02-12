@@ -41,18 +41,19 @@
                 %a{:href => "#"}
                   %i.icon-signal
                   Stats
-              %li.divider-vertical
-                %li
-                  = link_to edit_user_path(current_user) do
-                    %i.icon-edit
-                    Account Settings
-              %li.divider-vertical
-                %li
-                  = link_to current_user.profile do
-                    %i.icon-user
-                    Profile
-              %li.divider-vertical
-                = render 'shared/admin_dropdown'
+              - if user_signed_in?
+                %li.divider-vertical
+                  %li
+                    = link_to edit_user_path(current_user) do
+                      %i.icon-edit
+                      Account Settings
+                %li.divider-vertical
+                  %li
+                    = link_to current_user.profile do
+                      %i.icon-user
+                      Profile
+                %li.divider-vertical
+                  = render 'shared/admin_dropdown'
             %ul.nav.pull-right
               = render 'devise/sessions/sign_in'
     .container-fluid

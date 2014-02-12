@@ -2,6 +2,9 @@
   .row
     %h1=t '.title', :default => 'Upload'
     = link_to('New Upload', new_admin_upload_path, :class => 'btn btn-primary pull-right')
+
+= paginate @resources
+
 %table.table.table-striped
   %thead
     %tr

@@ -2,6 +2,9 @@
   .row
     %h1=t '.title', :default => 'Role'
     = link_to('New Role', new_admin_role_path, :class => 'btn btn-primary pull-right')
+
+= paginate @resources
+
 %table.table.table-striped
   %thead
     %tr

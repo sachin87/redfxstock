@@ -1,7 +1,6 @@
 .page-header.row
   %h1=t '.title', :default => 'Categories'
-.pagination
-  = paginate @categories
+= paginate @categories
 
 %table.table.table-striped
   %thead
@@ -13,5 +12,5 @@
       %tr
         %td= link_to category.name, category_path(category)
         %td= category.parent_id
-.pagination
-  = paginate @categories
+
+= paginate @categories
