@@ -12,7 +12,7 @@
     - @resources.each do |gallery|
       %tr
         %td= link_to gallery.name, admin_gallery_path(gallery)
-        %td=l gallery.created_at
+        %td= gallery.created_at.strftime("%B %d at %I:%M %p")
         %td
           = link_to('Edit', edit_admin_gallery_path(gallery), :class => 'btn btn-mini')
           = link_to('Delete', admin_gallery_path(gallery), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger')

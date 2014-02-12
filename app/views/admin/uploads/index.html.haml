@@ -14,7 +14,7 @@
       %tr
         %td= link_to upload.name, admin_upload_path(upload)
         %td= image_tag upload.image
-        %td=l upload.created_at
+        %td= upload.created_at.strftime("%B %d at %I:%M %p")
         %td
           = link_to('Edit', edit_admin_upload_path(upload), :class => 'btn btn-mini')
           = link_to('Delete', admin_upload_path(upload), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger')

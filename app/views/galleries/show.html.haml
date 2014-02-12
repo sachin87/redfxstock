@@ -1,10 +1,14 @@
 .page-header
-  %h1=t '.title', :default => 'Gallery'
+  %h1=t '.title', :default => "#{@gallery.name} Gallery"
 
 %p
   %strong Name:
   = @gallery.name
+  %strong Created At:
+  = @gallery.created_at.strftime("%B %d at %I:%M %p")
 
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), galleries_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_gallery_path(@gallery), :class => 'btn'
+
+%br
+
+= link_to t('.back', :default => t("helpers.links.back")), galleries_path, :class => 'btn'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_gallery_path(@gallery), :class => 'btn'

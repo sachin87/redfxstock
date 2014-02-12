@@ -1,5 +1,5 @@
 .page-header
-  %h1=t '.title', :default => 'Upload'
+  %h1=t '.title', :default => "#{@upload.name}"
 
 %p
   %strong Name:
@@ -19,6 +19,7 @@
   .form-actions
     = f.button :submit, :class => 'btn-primary'
 
-.form-actions
-  = link_to('Back', uploads_path, :class => 'btn')
-  = link_to('Edit', edit_upload_path(@upload), :class => 'btn')
+%br
+
+= link_to('Back', uploads_path, :class => 'btn')
+= link_to('Edit', edit_upload_path(@upload), :class => 'btn')

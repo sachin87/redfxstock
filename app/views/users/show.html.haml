@@ -1,14 +1,16 @@
 .page-header
-  %h1=t '.title', :default => 'User'
+  %h1=t '.title', :default => 'Account Settings'
 
-%p
-  %strong Email:
-  = @user.email
 %p
   %strong UserName:
   = @user.username
 
-.form-actions
-  = link_to('Back', users_path, :class => 'btn')
-  - if current_user == @user
-    = link_to('Edit', edit_user_path(@user), :class => 'btn')
+%p
+  %strong Email:
+  = @user.email
+
+%br
+
+= link_to('Back', users_path, :class => 'btn')
+- if current_user == @user
+  = link_to('Edit', edit_user_path(@user), :class => 'btn')

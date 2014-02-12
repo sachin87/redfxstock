@@ -1,5 +1,5 @@
 .page-header.row
-  %h1=t '.title', :default => 'Category'
+  %h1=t '.title', :default => 'Categories'
 
 = paginate @categories
 
@@ -8,12 +8,10 @@
     %tr
       %th Name
       %th Parent Category
-      %th Created At
   %tbody
     - @categories.each do |category|
       %tr
         %td= link_to category.name, category_path(category)
         %td= category.parent_id
-        %td=l category.created_at
 
 = paginate @categories

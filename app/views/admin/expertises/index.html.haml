@@ -15,7 +15,7 @@
     - @resources.each do |expertise|
       %tr
         %td= link_to expertise.name, admin_expertise_path(expertise)
-        %td=l expertise.created_at
+        %td= expertise.created_at.strftime("%B %d at %I:%M %p")
         %td
           = link_to('Edit', edit_admin_expertise_path(expertise), :class => 'btn btn-mini')
           = link_to('Delete', admin_expertise_path(expertise), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger')

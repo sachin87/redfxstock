@@ -21,6 +21,6 @@
         %td= profile.username
         %td= profile.gender
         %td= profile.dob
-        %td=l profile.created_at
+        %td= profile.created_at.strftime("%B %d at %I:%M %p")
 
 = paginate @profiles

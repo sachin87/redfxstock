@@ -14,7 +14,7 @@
       %tr
         %td= link_to category.name, admin_category_path(category)
         %td= category.parent_name
-        %td=l category.created_at
+        %td= category.created_at.strftime("%B %d at %I:%M %p")
         %td
           = link_to('Edit', edit_admin_category_path(category), :class => 'btn btn-mini')
           = link_to('Delete', admin_category_path(category), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger')

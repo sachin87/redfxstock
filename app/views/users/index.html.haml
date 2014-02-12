@@ -1,5 +1,5 @@
 .page-header.row
-  %h1=t '.title', :default => 'Members'
+  %h1=t '.title', :default => 'Artists'
 
 = paginate @users
 
@@ -9,12 +9,12 @@
     %tr
       %th UserName
       %th Email
-      %th Created At
+      %th Joined At
   %tbody
     - @users.each do |user|
       %tr
         %td= link_to(user.username, user_path(user))
         %td= user.email
-        %td=l user.created_at
+        %td= user.created_at.strftime("%B %d at %I:%M %p")
 
 = paginate @users

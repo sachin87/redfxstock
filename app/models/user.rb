@@ -1,11 +1,13 @@
 class User < ActiveRecord::Base
 
+  attr_accessor :current_password
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable, :confirmable,
          :lockable, :timeoutable, :omniauthable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :current_password
 
   validates :username, uniqueness: true
 

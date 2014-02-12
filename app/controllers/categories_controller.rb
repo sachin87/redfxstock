@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.page params[:page]
+    @categories = Category.select('id, name, parent_id, ancestry').page params[:page]
     respond_with @categories
   end
 

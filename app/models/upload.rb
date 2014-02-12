@@ -12,7 +12,7 @@ class Upload < ActiveRecord::Base
   end
 
   def user_name
-    @user_name ||= user.try(:name)
+    @user_name ||= user.try(:username)
   end
 
 end

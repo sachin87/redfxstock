@@ -20,7 +20,7 @@
         %td= profile.username
         %td= profile.gender
         %td= profile.dob
-        %td=l profile.created_at
+        %td= profile.created_at.strftime("%B %d at %I:%M %p")
         %td
           = link_to('Edit', edit_admin_profile_path(profile), :class => 'btn btn-mini')
           = link_to('Delete', admin_profile_path(profile), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger')

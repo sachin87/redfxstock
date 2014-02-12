@@ -16,4 +16,13 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
+  def edit
+    @resource = current_user
+  end
+
+  def update
+    current_user.update_attributes(params[:user])
+    respond_with current_user
+  end
+
 end
