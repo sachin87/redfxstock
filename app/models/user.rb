@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
   has_one :user_role, foreign_key: :user_id, class_name: 'UserRole', autosave: true
   has_one :role, through: :user_role
+  has_one :profile
   has_many :uploads
 
   delegate :name, to: :role, :prefix => true
