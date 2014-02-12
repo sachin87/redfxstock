@@ -151,6 +151,7 @@ GEM
       oauth2 (~> 0.9.3)
       omniauth (~> 1.2)
     orm_adapter (0.4.0)
+    pg (0.15.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -241,6 +242,7 @@ DEPENDENCIES
   kaminari
   less-rails
   omniauth-facebook
+  pg
   rails (= 3.2.13)
   rmagick (~> 2.13.2)
   sass-rails (~> 3.2.3)
