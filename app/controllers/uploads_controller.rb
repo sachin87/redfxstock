@@ -2,8 +2,14 @@ class UploadsController < ApplicationController
 
   before_filter :load_upload, only: [:edit, :update, :destroy]
 
+  respond_to :html, :json
+
   def index
-    @uploads = Upload.includes(:gallery).page params[:page]
+    if params[:tag]
+      @uploads = Upload.includes(:gallery).tagged_with(params[:tag]).page(params[:page])
+    else
+      @uploads = Upload.includes(:gallery).page(params[:page])
+    end
   end
 
   def new
@@ -12,12 +18,8 @@ class UploadsController < ApplicationController
 
   def create
     @upload = current_user.uploads.new(params[:upload])
-    if @upload.save
-      flash[:notice] = "Successfully created upload."
-      redirect_to @upload
-    else
-      render :action => 'new'
-    end
+    @upload.save
+    respond_with @upload
   end
 
   def show
@@ -28,18 +30,13 @@ class UploadsController < ApplicationController
   end
 
   def update
-    if @upload.update_attributes(params[:upload])
-      flash[:notice] = "Successfully updated upload."
-      redirect_to @upload
-    else
-      render :action => 'edit'
-    end
+    @upload.update_attributes(params[:upload])
+    respond_with @upload
   end
 
   def destroy
     @upload.destroy
-    flash[:notice] = "Successfully destroyed upload."
-    redirect_to @upload.gallery
+    respond_with @upload
   end
 
   private

@@ -1,7 +1,8 @@
 = simple_form_for @upload, :html => { :class => 'form-horizontal' } do |f|
   = f.input :name
   = f.association :gallery, input_html: { class: 'chosen-select' }
-  = f.input :image
+  = f.input :image, multiple: true, name: "upload[image]"
+  = f.input :tag_list
   .form-actions
     = f.button :submit, :class => 'btn btn-primary'
     = link_to('Cancel', uploads_path, :class => 'btn')

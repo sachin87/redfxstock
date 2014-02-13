@@ -18,7 +18,14 @@ class User < ActiveRecord::Base
 
   delegate :name, to: :role, :prefix => true
   before_create :set_role
+  after_create do
+    debugger
+    create_profile
+  end
+
   before_update :has_role?
+
+  acts_as_taggable
 
   Role::ROLE_HASH.each do |key, value|
     method_name = (key.to_s + '?').to_sym

@@ -43,3 +43,7 @@ end
 ['Photography', 'Graphic Designer', 'Web Designer-Developer', 'Student', 'Artist', 'Other'].each do |expertise|
   Expertise.create(name: expertise)
 end
+
+['Nature', 'Car', 'Art'].each do |name|
+  Gallery.create(name: name)
+end

@@ -22,6 +22,7 @@ class ProfilesController < ApplicationController
   # PUT /profiles/1
   # PUT /profiles/1.json
   def update
+    profile.update_attributes(params[:profile])
     respond_with(profile)
   end
 
