@@ -1,5 +1,7 @@
 Redfxstock::Application.routes.draw do
 
+  get 'tags/:tag', to: 'uploads#index', as: :tag
+
   devise_for :users
 
   namespace :admin do

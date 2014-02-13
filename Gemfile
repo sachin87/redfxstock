@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -18,7 +18,6 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem 'uglifier', '>= 1.0.3'
-  gem "jquery-fileupload-rails"
 end
 
 gem 'jquery-rails'
@@ -65,3 +64,5 @@ group :test do
 end
 
 gem 'omniauth-facebook'
+gem 'best_in_place'
+gem 'jquery-fileupload-rails'

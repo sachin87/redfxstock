@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require twitter/bootstrap
 //= require chosen-jquery
-//= require jquery-fileupload
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
+//= require jquery.purr
+//= require best_in_place
+//= require twitter/bootstrap
 //= require_tree .
 
 $(document).ready(function(){
@@ -29,11 +32,9 @@ $(document).ready(function(){
   $('.carousel').carousel()
 
   $('.datepicker').datepicker({
-      showButtonPanel: true,
-      showWeek: true,
-      firstDay: 1
+    showButtonPanel: true,
+    showWeek: true,
+    firstDay: 1
   });
-
-  $('#jquery-form').fileupload();
 
 });

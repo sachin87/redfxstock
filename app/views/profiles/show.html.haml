@@ -3,21 +3,28 @@
 
 %p
   %strong Name:
-  = @profile.name
+  = best_in_place @profile, :name
 %p
   %strong Location:
-  = @profile.location
+  = best_in_place @profile, :location
 %p
   %strong UserName:
-  = @profile.username
+  = best_in_place  @profile, :username
 %p
   %strong Gender:
-  = @profile.gender
+  = best_in_place @profile, :gender, type: :select, collection: [["Male", "Male"], ["Female", "Female"], ["", "Unspecified"]]
 %p
   %strong Dob:
-  = @profile.dob
+  = best_in_place @profile, :dob, class: 'datepicker'
+
+%p
+  %strong Public profile:
+  = best_in_place @profile, :public_profile, type: :checkbox, collection: %w[No Yes]
+
+%p
+  %strong About me:
+  = best_in_place @profile, :bio, type: :textarea
 
 %br
 
 = link_to('Back', profiles_path, :class => 'btn')
-= link_to('Edit', edit_profile_path(@profile), :class => 'btn')

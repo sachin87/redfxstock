@@ -13,8 +13,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  #storage :file
-  storage :fog # using carrierwave_direct makes s3 as default storage
+  storage :file
+  #storage :fog # using carrierwave_direct makes s3 as default storage
 
   include CarrierWave::MimeTypes
   process :set_content_type

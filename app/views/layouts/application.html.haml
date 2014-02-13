@@ -24,7 +24,8 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.icon-home.brand{:href => "#", :name => "top"} Redfxstock
+          = link_to root_path, class: 'icon-home brand' do
+            Redfxstock
           .nav-collapse.collapse
             %ul.nav
               %li
@@ -32,16 +33,16 @@
                   %i.icon-file
                   Browse By Categories
               %li.divider-vertical
-              %li
-                %a{:href => "#"}
-                  %i.icon-envelope
-                  Messages
-              %li.divider-vertical
-              %li
-                %a{:href => "#"}
-                  %i.icon-signal
-                  Stats
               - if user_signed_in?
+                %li
+                  = link_to "#" do
+                    %i.icon-envelope
+                    Messages
+                %li.divider-vertical
+                %li
+                  = link_to "#" do
+                    %i.icon-signal
+                    Stats
                 %li.divider-vertical
                   %li
                     = link_to edit_user_path(current_user) do
