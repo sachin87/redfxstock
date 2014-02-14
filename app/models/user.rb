@@ -19,13 +19,11 @@ class User < ActiveRecord::Base
   has_many :user_expertises, class_name: 'UserExpertise'
   has_many :expertises, through: :user_expertises
 
-
   letsrate_rater
 
   delegate :name, to: :role, :prefix => true
   before_create :set_role
   after_create do
-    debugger
     create_profile
   end
 
