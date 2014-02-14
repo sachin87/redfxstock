@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140214132546) do
+ActiveRecord::Schema.define(:version => 20140214144423) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20140214132546) do
     t.integer  "user_id"
     t.text     "bio"
     t.boolean  "public_profile"
+    t.string   "avatar"
   end
 
   add_index "profiles", ["dob"], :name => "index_profiles_on_dob"

@@ -15,11 +15,15 @@
   = best_in_place @profile, :gender, type: :select, collection: [["Male", "Male"], ["Female", "Female"], ["", "Unspecified"]]
 %p
   %strong Dob:
-  = best_in_place @profile, :dob, class: 'datepicker'
+  = best_in_place @profile, :dob, :type => :date, class: 'datepicker'
 
 %p
   %strong Public profile:
   = best_in_place @profile, :public_profile, type: :checkbox, collection: %w[No Yes]
+
+%p
+  %strong Profile Pic:
+  = best_in_place @profile, :avatar, type: :file
 
 %p
   %strong About me:
