@@ -19,6 +19,7 @@
 //= require jquery.purr
 //= require best_in_place
 //= require twitter/bootstrap
+//= require chosen-jquery
 //= require_tree .
 
 $(document).ready(function(){

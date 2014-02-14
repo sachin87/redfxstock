@@ -1,0 +1,31 @@
+.page-header
+  %h1=@upload.name
+
+%p
+  = image_tag @upload.image.thumb, class: 'img-polaroid'
+
+= link_to '#', class: 'btn btn-large' do
+  %i.icon-star
+  Star
+= link_to '#', class: 'btn btn-small' do
+  %i.icon-star
+  Star
+= link_to '#', class: 'btn btn-mini' do
+  %i.icon-star
+  Star
+
+%p
+  %strong Gallery:
+  = @upload.gallery_name
+
+%p
+  %strong Owner:
+  = @upload.user_name
+
+%h6 Comments
+
+= render 'comments/comments', commentable: @upload
+
+= render 'comments/form', commentable: @upload
+
+

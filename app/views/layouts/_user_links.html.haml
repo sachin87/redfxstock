@@ -1,3 +1,6 @@
-%li.nav-header User Section
-- USER_SECTIONS.each do |section|
-  %li= link_to(section, eval("#{section.downcase}_path"))
+%ul.nav.nav-list
+  - USER_SECTIONS.each do |section, ui_klass|
+    %li
+      = link_to eval("#{section.downcase}_path") do
+        %i{ class: "#{ui_klass} icon-white" }
+        = section

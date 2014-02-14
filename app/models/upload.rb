@@ -7,12 +7,14 @@ class Upload < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  letsrate_rateable :image
+
   before_create :default_name
 
   validates :image, :gallery_id, :tag_list, presence: true
 
   acts_as_taggable
-  #acts_as_commentable
+  acts_as_commentable
 
   def default_name
     self.name ||= File.basename(image.filename, '.*').titleize if image

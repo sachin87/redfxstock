@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :uploads
 
+  letsrate_rater
+
   delegate :name, to: :role, :prefix => true
   before_create :set_role
   after_create do

@@ -24,6 +24,8 @@ class UploadsController < ApplicationController
 
   def show
     @upload = Upload.includes(:gallery).find(params[:id])
+    @comment = @upload.comments.new
+    @comment.user = current_user
   end
 
   def edit

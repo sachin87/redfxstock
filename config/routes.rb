@@ -1,5 +1,7 @@
 Redfxstock::Application.routes.draw do
 
+  post '/rate' => 'rater#create', :as => 'rate'
+
   get 'tags/:tag', to: 'uploads#index', as: :tag
 
   devise_for :users
@@ -15,9 +17,11 @@ Redfxstock::Application.routes.draw do
     resources :users
   end
 
-  resources :galleries
+  resources :uploads do
+    resources :comments
+  end
 
-  resources :uploads
+  resources :galleries
 
   resources :expertises
 
@@ -27,7 +31,9 @@ Redfxstock::Application.routes.draw do
 
   resources :categories
 
-  resources :users
+  resources :users do
+    resources :comments
+  end
 
   root :to => "home#index"
 

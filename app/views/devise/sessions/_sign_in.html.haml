@@ -3,13 +3,15 @@
     = link_to('Sign Out', destroy_user_session_path, :method => :delete)
 - else
   %li.dropdown
-    = link_to 'Sign Up', "#", class: 'dropdown-toggle', "data-toggle" => "dropdown"
-    %strong.caret
+    = link_to "#", class: 'dropdown-toggle', "data-toggle" => "dropdown" do
+      Sign Up
+      %strong.caret
     = render 'devise/registrations/sign_up'
   %li.divider-vertical
   %li.dropdown
-    = link_to 'Sign In', "#", class: 'dropdown-toggle', "data-toggle" => "dropdown"
-    %strong.caret
+    = link_to "#", class: 'dropdown-toggle', "data-toggle" => "dropdown" do
+      Sign In
+      %strong.caret
     .dropdown-menu{:style => "padding: 15px; padding-bottom: 0px;"}
       = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         = f.input :email, required: true, label: false, autofocus: true, placeholder: 'Email', input_html: { style: "margin-bottom: 15px;" }

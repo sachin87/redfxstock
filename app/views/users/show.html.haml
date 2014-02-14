@@ -1,5 +1,10 @@
-.page-header
-  %h1=t '.title', :default => 'Account Settings'
+.row-fluid
+  .span12
+    .span8
+      %h3 Account Settings
+    .span4
+      - if current_user == @user
+        = link_to('Change Account Settings', edit_user_path(@user), :class => 'btn')
 
 %p
   %strong UserName:
@@ -12,5 +17,28 @@
 %br
 
 = link_to('Back', users_path, :class => 'btn')
-- if current_user == @user
-  = link_to('Edit', edit_user_path(@user), :class => 'btn')
+
+%h6 Images uploaded by #{@user.username}
+.row-fluid
+  .span12
+    - @user.uploads.in_groups_of(2) do |uploads|
+      .row-fluid
+        - uploads.compact.each do |upload|
+          .span6
+            = link_to(image_tag(upload.image.thumb, class: 'img-polaroid'), upload)
+            %strong Gallery:
+            = upload.gallery_name
+            %p
+              = link_to '#', class: 'btn btn-large' do
+                %i.icon-star
+                Star
+              = link_to '#', class: 'btn btn-small' do
+                %i.icon-star
+                Star
+              = link_to '#', class: 'btn btn-mini' do
+                %i.icon-star
+                Star
+            %h6 Comments
+
+            = render 'comments/comments', commentable: upload
+    %br

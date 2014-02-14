@@ -8,7 +8,7 @@ class ExpertisesController < ApplicationController
     @expertises = Expertise.select('id, name').page(params[:page])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # index.html.haml
       format.json { render json: @expertises }
     end
   end
@@ -19,7 +19,7 @@ class ExpertisesController < ApplicationController
     @expertise = Expertise.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # show.html.haml
       format.json { render json: @expertise }
     end
   end

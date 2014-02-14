@@ -66,3 +66,4 @@ end
 gem 'omniauth-facebook'
 gem 'best_in_place'
 gem 'jquery-fileupload-rails'
+gem "letsrate", "~> 1.0.9"
