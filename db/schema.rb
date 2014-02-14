@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140212134726) do
+ActiveRecord::Schema.define(:version => 20140214132546) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -61,9 +61,11 @@ ActiveRecord::Schema.define(:version => 20140212134726) do
     t.string   "username"
     t.string   "gender"
     t.date     "dob"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "user_id"
+    t.text     "bio"
+    t.boolean  "public_profile"
   end
 
   add_index "profiles", ["dob"], :name => "index_profiles_on_dob"
@@ -71,6 +73,31 @@ ActiveRecord::Schema.define(:version => 20140212134726) do
   add_index "profiles", ["location"], :name => "index_profiles_on_location"
   add_index "profiles", ["name"], :name => "index_profiles_on_name"
   add_index "profiles", ["username"], :name => "index_profiles_on_username"
+
+  create_table "rates", :force => true do |t|
+    t.integer  "rater_id"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.float    "stars",         :null => false
+    t.string   "dimension"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "rates", ["rateable_id", "rateable_type"], :name => "index_rates_on_rateable_id_and_rateable_type"
+  add_index "rates", ["rater_id"], :name => "index_rates_on_rater_id"
+
+  create_table "rating_caches", :force => true do |t|
+    t.integer  "cacheable_id"
+    t.string   "cacheable_type"
+    t.float    "avg",            :null => false
+    t.integer  "qty",            :null => false
+    t.string   "dimension"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "rating_caches", ["cacheable_id", "cacheable_type"], :name => "index_rating_caches_on_cacheable_id_and_cacheable_type"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -111,6 +138,13 @@ ActiveRecord::Schema.define(:version => 20140212134726) do
   add_index "uploads", ["gallery_id"], :name => "index_uploads_on_gallery_id"
   add_index "uploads", ["name"], :name => "index_uploads_on_name"
   add_index "uploads", ["user_id"], :name => "index_uploads_on_user_id"
+
+  create_table "user_expertises", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "expertise_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "user_roles", :force => true do |t|
     t.integer  "role_id"

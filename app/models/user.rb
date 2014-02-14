@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :uploads
 
+  has_many :user_expertises, class_name: 'UserExpertise'
+  has_many :expertises, through: :user_expertises
+
+
   letsrate_rater
 
   delegate :name, to: :role, :prefix => true
