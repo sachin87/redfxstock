@@ -66,10 +66,7 @@ ActiveRecord::Schema.define(:version => 20140214144423) do
     t.integer  "user_id"
     t.text     "bio"
     t.boolean  "public_profile"
-<<<<<<< Updated upstream
     t.string   "avatar"
-=======
->>>>>>> Stashed changes
   end
 
   add_index "profiles", ["dob"], :name => "index_profiles_on_dob"
