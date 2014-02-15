@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
 
-  respond_ro :json, :xml
+  respond_to :json, :xml
 
   before_filter :load_tag, only: [:edit, :show, :update, :destroy]
 
