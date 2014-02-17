@@ -29,7 +29,7 @@
           .nav-collapse.collapse
             %ul.nav
               %li
-                = link_to categories_path do
+                = link_to browse_by_category_sessions_path do
                   %i.icon-file
                   Browse By Categories
               %li.divider-vertical
@@ -58,7 +58,7 @@
             %ul.nav.pull-right
               = render 'devise/sessions/sign_in'
     .container-fluid
-      .row
+      .row-fluid
         .span3
           = render 'layouts/side_bar_menu'
         .span9
@@ -67,16 +67,9 @@
             = yield :slider
           - else
             = yield
-
-      %footer
-        %p &copy; Company 2014
-    /
-      Javascripts
-      \==================================================
-    / Placed at the end of the document so the pages load faster
-    = javascript_include_tag "application"
-    //.nav-collapse
-    //.container-fluid
-    //.navbar-inner
-    //.navbar
+      .row-fluid
+        .span12
+          .footer
+            = render 'layouts/footer'
+            = javascript_include_tag "application"
 

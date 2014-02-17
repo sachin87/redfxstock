@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :current_password
 
-  validates :username, uniqueness: true
+  #validates :username, uniqueness: true
 
   has_one :user_role, foreign_key: :user_id, class_name: 'UserRole', autosave: true
   has_one :role, through: :user_role

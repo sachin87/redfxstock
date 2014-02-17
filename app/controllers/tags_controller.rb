@@ -5,8 +5,10 @@ class TagsController < ApplicationController
   before_filter :load_tag, only: [:edit, :show, :update, :destroy]
 
   def index
-    @tags = Tag.all
-    respond_with @tags
+    respond_to do |format|
+      format.html { @tags = Tag.all }
+      format.json { render json: Upload.tokens(params[:q]) }
+    end
   end
 
   def show

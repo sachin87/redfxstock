@@ -1,9 +1,10 @@
 class Upload < ActiveRecord::Base
 
-  attr_accessible :gallery_id, :name, :image, :remote_image_url, :tag_list
+  attr_accessible :gallery_id, :name, :image, :remote_image_url, :tag_list, :tag_tokens
 
   belongs_to :gallery
   belongs_to :user
+  attr_reader :tag_tokens
 
   mount_uploader :image, ImageUploader
   before_create :default_name
@@ -24,6 +25,24 @@ class Upload < ActiveRecord::Base
 
   def user_name
     @user_name ||= user.try(:username)
+  end
+
+  def tag_tokens=(tokens)
+    self.tag_list = Upload.ids_from_tokens(tokens)
+  end
+
+  def self.tokens(query)
+    tags = ActsAsTaggableOn::Tag.where("name like ?", "%#{query}%")
+    if tags.empty?
+      [{id: "<<<#{query}>>>", name: "New: \"#{query}\""}]
+    else
+      tags
+    end
+  end
+
+  def self.ids_from_tokens(tokens)
+    tokens.gsub!(/<<<(.+?)>>>/) { ActsAsTaggableOn::Tag.create!(name: $1).name }
+    tokens.split(',')
   end
 
 end

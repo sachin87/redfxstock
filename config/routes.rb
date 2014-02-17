@@ -1,10 +1,26 @@
 Redfxstock::Application.routes.draw do
 
+  resources :states
+
+
+  resources :countries
+
+
+  devise_for :users, :controllers => {:sessions => 'sessions'} do
+    post "/sessions/user" => 'sessions#create'
+    resources :sessions do
+      collection do
+        get 'browse_by_category'
+      end
+    end
+  end
+
+  resources :guests
+
   post '/rate' => 'rater#create', :as => 'rate'
 
+  resources :tags
   get 'tags/:tag', to: 'uploads#index', as: :tag
-
-  devise_for :users
 
   namespace :admin do
     resources :galleries

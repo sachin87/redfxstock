@@ -1,1 +1,47 @@
-Welcome #{current_user.email}
+.container
+  .row
+    .col-md-6
+      .panel.panel-primary
+        .panel-heading
+          %h3.panel-title
+            %span.glyphicon.glyphicon-bookmark
+            Quick Shortcuts
+        .panel-body
+          .row
+            .col-xs-6.col-md-6
+              %a.btn.btn-danger.btn-lg{href: "#", role: "button"}
+                %span.glyphicon.glyphicon-list-alt
+                = succeed "Apps" do
+                  %br/
+              %a.btn.btn-warning.btn-lg{href: "#", role: "button"}
+                %span.glyphicon.glyphicon-bookmark
+                = succeed "Bookmarks" do
+                  %br/
+              %a.btn.btn-primary.btn-lg{href: "#", role: "button"}
+                %span.glyphicon.glyphicon-signal
+                = succeed "Reports" do
+                  %br/
+              %a.btn.btn-primary.btn-lg{href: "#", role: "button"}
+                %span.glyphicon.glyphicon-comment
+                = succeed "Comments" do
+                  %br/
+            .col-xs-6.col-md-6
+              %a.btn.btn-success.btn-lg{href: "#", role: "button"}
+                %span.glyphicon.glyphicon-user
+                = succeed "Users" do
+                  %br/
+              %a.btn.btn-info.btn-lg{href: "#", role: "button"}
+                %span.glyphicon.glyphicon-file
+                = succeed "Notes" do
+                  %br/
+              %a.btn.btn-primary.btn-lg{href: "#", role: "button"}
+                %span.glyphicon.glyphicon-picture
+                = succeed "Photos" do
+                  %br/
+              %a.btn.btn-primary.btn-lg{href: "#", role: "button"}
+                %span.glyphicon.glyphicon-tag
+                = succeed "Tags" do
+                  %br/
+          %a.btn.btn-success.btn-lg.btn-block{href: "http://www.jquery2dotnet.com/", role: "button"}
+            %span.glyphicon.glyphicon-globe
+            Website

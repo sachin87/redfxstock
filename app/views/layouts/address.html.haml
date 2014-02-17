@@ -1,0 +1,48 @@
+.container
+  .row
+    %form.form-horizontal
+      %fieldset
+        / Address form
+        %h2 Address
+        / full-name input
+        .control-group
+          %label.control-label Full Name
+          .controls
+            %input#full-name.input-xlarge{name: "full-name", placeholder: "full name", type: "text"}/
+            %p.help-block
+        / address-line1 input
+        .control-group
+          %label.control-label Address Line 1
+          .controls
+            %input#address-line1.input-xlarge{name: "address-line1", placeholder: "address line 1", type: "text"}/
+            %p.help-block Street address, P.O. box, company name, c/o
+        / address-line2 input
+        .control-group
+          %label.control-label Address Line 2
+          .controls
+            %input#address-line2.input-xlarge{name: "address-line2", placeholder: "address line 2", type: "text"}/
+            %p.help-block Apartment, suite , unit, building, floor, etc.
+        / city input
+        .control-group
+          %label.control-label City / Town
+          .controls
+            %input#city.input-xlarge{name: "city", placeholder: "city", type: "text"}/
+            %p.help-block
+        / region input
+        .control-group
+          %label.control-label State / Province / Region
+          .controls
+            %input#region.input-xlarge{name: "region", placeholder: "state / province / region", type: "text"}/
+            %p.help-block
+        / postal-code input
+        .control-group
+          %label.control-label Zip / Postal Code
+          .controls
+            %input#postal-code.input-xlarge{name: "postal-code", placeholder: "zip or postal code", type: "text"}/
+            %p.help-block
+        / country select
+        .control-group
+          %label.control-label Country
+          .controls
+            %select#country.input-xlarge{name: "country"}
+              %option{selected: "selected", value: ""} (please select a country)

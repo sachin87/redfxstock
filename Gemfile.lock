@@ -204,6 +204,11 @@ GEM
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       polyamorous (~> 0.6.0)
+    strong_parameters (0.2.3)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -254,6 +259,7 @@ DEPENDENCIES
   simple_form (~> 2.1.0)
   sqlite3
   squeel
+  strong_parameters
   therubyracer
   twitter-bootstrap-rails (~> 2.2.6)
   uglifier (>= 1.0.3)
