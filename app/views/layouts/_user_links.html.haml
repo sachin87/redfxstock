@@ -1,6 +1,6 @@
 %ul.nav.nav-list
   - USER_SECTIONS.each do |section, ui_klass|
     %li
-      = link_to eval("#{section.downcase}_path") do
+      = link_to eval("#{current_user ? "member" : "guest"}_#{section.downcase}_path") do
         %i{ class: "#{ui_klass} icon-white" }
         = section

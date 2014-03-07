@@ -1,13 +1,22 @@
-class SessionsController < Devise::SessionsController
+module Guest
+  class CategoriesController < Devise::SessionsController
 
-  #require 'devise/parameter_sanitizer'
+    skip_before_filter :authenticate_user!
 
-    def browse_by_category
+    respond_to :html, :json
+
+    def index
       self.resource = resource_class.new
       clean_up_passwords(resource)
       serialize_options(resource)
       @categories = Category.order(:name).select('id, name').page params[:page]
-      render 'guests/index'
+    end
+
+    # GET /categories/1
+    # GET /categories/1.json
+    def show
+      @category = Category.find(params[:id])
+      respond_with @category
     end
 
     protected
@@ -27,4 +36,5 @@ class SessionsController < Devise::SessionsController
       { :scope => resource_name, :recall => "#{controller_path}#new" }
     end
 
+  end
 end
