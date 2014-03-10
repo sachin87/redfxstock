@@ -1,0 +1,20 @@
+.page-header.row
+  %h1=t '.title', :default => 'Artists'
+
+= paginate @users
+
+%br
+%table.table.table-striped
+  %thead
+    %tr
+      %th UserName
+      %th Email
+      %th Member Since
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to(user.username, guest_user_path(user))
+        %td= user.email
+        %td= user.created_at.strftime("%B %d at %I:%M %p")
+
+= paginate @users

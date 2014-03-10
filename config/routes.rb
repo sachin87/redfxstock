@@ -1,7 +1,9 @@
 Redfxstock::Application.routes.draw do
 
   devise_for :users, :controllers => {:sessions => 'guest/categories'} do
-    post "/sessions/user" => 'sessions#create'
+    post "/sessions/user" => 'guest/categories#create'
+    get "/guest/categories" => 'guest/categories#index'
+    get "/guest/categories/:id" => 'guest/categories#show'
   end
 
 
@@ -11,31 +13,23 @@ Redfxstock::Application.routes.draw do
   get 'tags/:tag', to: 'uploads#index', as: :tag
 
   namespace :admin do
-    resources :galleries
+    resources :galleries, :expertises, :profiles, :categories
     resources :uploads do
       resources :comments
     end
-    resources :expertises
-    resources :profiles
     resources :roles
-    resources :categories
     resources :home, only: :show
     resources :users do
       resources :comments
     end
-    resources :states
-    resources :countries
+    resources :states, :countries
   end
 
   namespace :member do
-    resources :galleries
+    resources :galleries, :expertises, :profiles, :categories
     resources :uploads do
       resources :comments
     end
-    resources :expertises
-    resources :profiles
-    resources :roles
-    resources :categories
     resources :home, only: :show
     resources :users do
       resources :comments
@@ -43,13 +37,11 @@ Redfxstock::Application.routes.draw do
   end
 
   namespace :guest do
-    resources :galleries
+    resources :galleries, :expertises, :profiles
+    resources :categories, only: :show
     resources :uploads do
       resources :comments
     end
-    resources :expertises
-    resources :profiles
-    resources :categories
     resources :home, only: :show
     resources :users do
       resources :comments
