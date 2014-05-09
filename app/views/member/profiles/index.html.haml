@@ -1,5 +1,5 @@
 .page-header.row
-  %h1=t '.title', :default => 'Profile'
+  %h1=t '.title', default: 'Profile'
 
 = paginate @profiles
 
@@ -15,7 +15,7 @@
   %tbody
     - @profiles.each do |profile|
       %tr
-        %td= link_to profile.name, profile_path(profile)
+        %td= link_to profile.name, member_profile_path(profile)
         %td= profile.location
         %td= profile.username
         %td= profile.gender

@@ -11,12 +11,12 @@
 
 %br
 
-= link_to t('.back', :default => t("helpers.links.back")), galleries_path, :class => 'btn'
-= link_to t('.edit', :default => t("helpers.links.edit")), edit_gallery_path(@gallery), :class => 'btn'
+= link_to t('.back', :default => t("helpers.links.back")), member_galleries_path, :class => 'btn'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_member_gallery_path(@gallery), :class => 'btn'
 
 %br
 
-= form_for current_user.uploads.new, :html => { :class => 'form-horizontal', :id => 'jquery-form' } do |f|
+= form_for [:member, current_user.uploads.new], :html => { :class => 'form-horizontal', :id => 'jquery-form' } do |f|
   = f.hidden_field :gallery_id, :value => @gallery.id
   = f.label :tag_list, "Tags"
   = f.text_field :tag_list
@@ -40,5 +40,5 @@
       .row-fluid
         - uploads.compact.each do |upload|
           .span4
-            = link_to(image_tag(upload.image.thumb), upload)
+            = link_to(image_tag(upload.image.thumb), [:member.upload])
       %br

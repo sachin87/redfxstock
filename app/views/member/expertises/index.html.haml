@@ -1,5 +1,5 @@
 .page-header.row
-  %h1=t '.title', :default => 'Expertises'
+  %h1=t '.title', default: 'Expertises'
 
 = paginate @expertises
 
@@ -10,7 +10,7 @@
   %tbody
     - @expertises.each do |expertise|
       %tr
-        %td= link_to expertise.name, expertise_path(expertise)
+        %td= link_to expertise.name, member_expertise_path(expertise)
 
 = paginate @expertises
 

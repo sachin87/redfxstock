@@ -1,4 +1,4 @@
-= simple_form_for [commentable, @comment] do |f|
+= simple_form_for [commentable,:member, @comment] do |f|
   = f.input :title
   = f.input :comment, as: :text, input_html: { rows: "3" }
   = f.submit class: 'btn btn-success'

@@ -1,5 +1,5 @@
 .page-header.row
-  %h1=t '.title', :default => 'Galleries'
+  %h1=t '.title', default: 'Galleries'
 
 = paginate @galleries
 
@@ -11,6 +11,6 @@
   %tbody
     - @galleries.each do |gallery|
       %tr
-        %td= link_to gallery.name, gallery_path(gallery)
+        %td= link_to gallery.name, member_gallery_path(gallery)
 
 = paginate @galleries
