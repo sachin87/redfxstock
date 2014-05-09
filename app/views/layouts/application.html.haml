@@ -45,7 +45,7 @@
                     Stats
                 %li.divider-vertical
                   %li
-                    = link_to edit_user_path(current_user) do
+                    = link_to edit_member_user_path(current_user) do
                       %i.icon-edit
                       Account Settings
                 %li.divider-vertical
@@ -59,14 +59,9 @@
               = render 'devise/sessions/sign_in'
     .container-fluid
       .row-fluid
-        .span3
-          = render 'layouts/side_bar_menu'
-        .span9
+        .span12
           = bootstrap_flash
-          - if sign_in_page?
-            = yield :slider
-          - else
-            = yield
+          = yield
       .row-fluid
         .span12
           .footer

@@ -1,9 +1,6 @@
-.row-fluid
-  .well.sidebar-nav
-    %ul.nav.nav-list
-      - if current_user && current_user.moderator?
+- if current_user && current_user.moderator?
+  .row-fluid
+    .well.sidebar-nav
+      %ul.nav.nav-list
         = render 'layouts/admin_links'
         = render 'layouts/user_links'
-      - else
-        = render 'layouts/user_links'
-

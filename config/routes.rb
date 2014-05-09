@@ -4,8 +4,8 @@ Redfxstock::Application.routes.draw do
     post "/sessions/user" => 'guest/categories#create'
     get "/guest/categories" => 'guest/categories#index'
     get "/guest/categories/:id" => 'guest/categories#show'
+    get '/' => 'guest/categories#index'
   end
-
 
   post '/rate' => 'rater#create', :as => 'rate'
 
@@ -48,6 +48,6 @@ Redfxstock::Application.routes.draw do
     end
   end
 
-  root :to => "home#index"
+  root :to => "guest/categories#index"
 
 end

@@ -2,18 +2,20 @@ module Guest
   class CategoriesController < Devise::SessionsController
 
     skip_before_filter :authenticate_user!
+    before_filter :load_categories, only: [:new, :index]
 
     respond_to :html, :json
 
-    def index
-      self.resource = resource_class.new
-      clean_up_passwords(resource)
-      serialize_options(resource)
-      @categories = Category.order(:name).select('id, name').page params[:page]
+    def new
+      instanciate_and_clear_password
+      render 'guest/categories/index'
     end
 
-    # GET /categories/1
-    # GET /categories/1.json
+    def index
+      instanciate_and_clear_password
+      serialize_options(resource)
+    end
+
     def show
       @category = Category.find(params[:id])
       respond_with @category
@@ -34,6 +36,15 @@ module Guest
 
     def auth_options
       { :scope => resource_name, :recall => "#{controller_path}#new" }
+    end
+
+    def instanciate_and_clear_password
+      self.resource = resource_class.new
+      clean_up_passwords(resource)
+    end
+
+    def load_categories
+      @categories = Category.order(:name).select('id, name').page params[:page]
     end
 
   end

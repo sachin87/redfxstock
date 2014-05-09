@@ -132,5 +132,263 @@ body{ margin-top:20px;}
 
 /* admin panel */
 
-body { padding-top:20px; }
-.panel-body .btn:not(.btn-block) { width:120px;margin-bottom:10px; }
+/*body { padding-top:20px; }*/
+/*.panel-body .btn:not(.btn-block) { width:120px;margin-bottom:10px; }*/
+
+
+#custom-search-input {
+    margin:0;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:#D9230F;
+}
+
+.search-query:focus + button {
+    z-index: 3;
+}
+
+@import url(http://weloveiconfonts.com/api/?family=brandico|entypo|openwebicons|zocial);
+
+/* brandico */
+[class*="brandico-"]:before {
+    font-family: 'brandico', sans-serif;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
+/* openwebicons */
+[class*="openwebicons-"]:before {
+    font-family: 'OpenWeb Icons', sans-serif;
+}
+
+/* zocial */
+[class*="zocial-"]:before {
+    font-family: 'zocial', sans-serif;
+}
+
+.form-signin{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+
+.login-input {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.login-input-pass {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.signup-input {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.signup-input-confirm {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+
+.create-account {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.form-signin .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn-center{
+    width: 50%;
+    text-align: center;
+    margin: inherit;
+}
+
+.social-login-btn {
+    margin: 5px;
+    width: 20%;
+    font-size: 250%;
+    padding: 0;
+}
+
+.social-login-more {
+    width: 45%;
+}
+
+.social-google {
+    background-color: #da573b;
+    border-color: #be5238;
+}
+.social-google:hover{
+    background-color: #be5238;
+    border-color: #9b4631;
+}
+
+.social-twitter {
+    background-color: #1daee3;
+    border-color: #3997ba;
+}
+.social-twitter:hover {
+    background-color: #3997ba;
+    border-color: #347b95;
+}
+
+.social-facebook {
+    background-color: #4c699e;
+    border-color: #47618d;
+}
+.social-facebook:hover {
+    background-color: #47618d;
+    border-color: #3c5173;
+}
+
+.social-linkedin {
+    background-color: #4875B4;
+    border-color: #466b99;
+}
+.social-linkedin:hover {
+    background-color: #466b99;
+    border-color: #3b5a7c;
+}
+
+.item {
+    background-color:#C0392B;
+}
+
+/*%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css", rel: "stylesheet"}/*/
+/*%script#metamorph-1-start{type: "text/x-placeholder"}*/
+/*%script#metamorph-21-start{type: "text/x-placeholder"}*/
+/*.container.text-center*/
+/*%form.form-signin{"data-ember-action" => "2"}*/
+/*%h2.form-signin-heading Sign in*/
+/*%small.text-muted Connect [your service] with your favorite social network*/
+/*%br/*/
+/*%br/*/
+/*%p*/
+/*%a.btn.btn-primary.social-login-btn.social-facebook{href: "/auth/facebook"}*/
+/*%i.fa.fa-facebook*/
+/*%a.btn.btn-primary.social-login-btn.social-twitter{href: "/auth/twitter"}*/
+/*%i.fa.fa-twitter*/
+/*%p*/
+/*%a.btn.btn-primary.social-login-btn.social-linkedin{href: "/auth/linkedin"}*/
+/*%i.fa.fa-linkedin*/
+/*%a.btn.btn-primary.social-login-btn.social-google{href: "/auth/google"}*/
+/*%i.fa.fa-google-plus*/
+    /*.btn-group.social-login-more*/
+/*%button.btn.btn-default.dropdown-toggle.btn-block{"data-toggle" => "dropdown", type: "button"}*/
+/*More...*/
+/*%ul.dropdown-menu.text-left{role: "menu"}*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%i.fa.fa-tumblr-sign*/
+            /*Tumblr*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%i.fa.fa-github-alt*/
+            /*Github*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%i.fa.fa-dropbox*/
+            /*Dropbox*/
+/*%li*/
+/*%a{href: "/auth/amazon"}*/
+/*%span.zocial-amazon*/
+            /*Amazon*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%span.zocial-bitbucket*/
+            /*Bitbucket*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%span.zocial-evernote*/
+            /*Evernote*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%span.zocial-meetup*/
+            /*Meetup*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%i.fa.fa-windows*/
+            /*Windows Live*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%i.fa.fa-weibo*/
+            /*Weibo*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%i.fa.fa-foursquare*/
+            /*Foursquare*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%i.fa.fa-stackexchange*/
+            /*Stack Exchange*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%i.fa.fa-trello*/
+            /*Trello*/
+/*%li*/
+/*%a{href: "#"}*/
+/*%span.zocial-wordpress*/
+            /*Wordpress*/
+/*%br/*/
+/*%br/*/
+/*%small.text-muted Or sign in with [your service]*/
+/*%br/*/
+/*%br/*/
+/*%input#ember360.ember-view.ember-text-field.form-control.login-input{placeholder: "Email Address", type: "text"}/*/
+/*%input#ember361.ember-view.ember-text-field.form-control.login-input-pass{placeholder: "Password", type: "password"}/*/
+/*%script#metamorph-22-start{type: "text/x-placeholder"}*/
+/*%script#metamorph-22-end{type: "text/x-placeholder"}*/
+/*%button.btn.btn-lg.btn-primary.btn-block.btn-center{"data-bindattr-3" => "3", type: "submit"} Sign in*/
+/*%br/*/
+/*%small.create-account.text-muted*/
+      /*Dont have a [your service] or social network account?*/
+/*%button#ember363.ember-view.btn.btn-sm.btn-default Sign Up*/

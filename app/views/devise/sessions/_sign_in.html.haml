@@ -21,25 +21,3 @@
         = label_tag 'or', 'or', :style => "text-align:center;margin-top:5px"
         = button_to "Sign In with Google", '#', class: 'btn btn-primary btn-block'
         = button_to "Sign In with Twitter", '#', class: 'btn btn-primary btn-block'
-
-- content_for(:slider) do
-  #carousel-example-generic.carousel.slide
-    %ol.carousel-indicators
-      %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-      %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
-      %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
-    / Wrapper for slides
-    .carousel-inner
-      - images_for_carousel.each do |item|
-        - if item == 1
-          .item.active
-            = image_tag("slide#{item}.jpg", :alt => "image_#{item}")
-            .carousel-caption
-        - else
-          .item
-            = image_tag("slide#{item}.jpg", :alt => "image_#{item}")
-    / Controls
-    = link_to("#carousel-example-generic", class: "left carousel-control", "data-slide" => "prev") do
-      %span.icon-prev
-    = link_to("#carousel-example-generic", class: "right carousel-control", "data-slide" => "next") do
-      %span.icon-next
