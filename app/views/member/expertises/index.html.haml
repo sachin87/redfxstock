@@ -10,7 +10,7 @@
   %tbody
     - @expertises.each do |expertise|
       %tr
-        %td= link_to expertise.name, member_expertise_path(expertise)
+        %td= link_to expertise.name, [:member, expertise]
 
 = paginate @expertises
 

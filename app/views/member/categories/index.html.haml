@@ -10,7 +10,7 @@
   %tbody
     - @categories.each do |category|
       %tr
-        %td= link_to category.name, member_category_path(category)
-        %td= category.parent_id
+        %td= link_to category.name, [:member, category]
+        %td= category.parent_name
 
 = paginate @categories

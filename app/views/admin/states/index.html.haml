@@ -8,13 +8,13 @@
     %th
     %th
 
-  - @states.each do |state|
+  - @resources.each do |state|
     %tr
       %td= state.name
       %td= state.country_id
-      %td= link_to 'Show', state
-      %td= link_to 'Edit', edit_state_path(state)
-      %td= link_to 'Destroy', state, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Show', [:admin, state]
+      %td= link_to 'Edit', edit_admin_state_path(state)
+      %td= link_to 'Destroy',[:admin, state], method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

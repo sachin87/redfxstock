@@ -6,8 +6,7 @@
   = @category.name
 %p
   %strong Parent Category:
-  = @category.parent_id
+  = @category.parent_name
 
 .form-actions
   = link_to t('.back', default: t("helpers.links.back")), member_categories_path, class: 'btn'
-  = link_to t('.edit', default: t("helpers.links.edit")), edit_member_category_path(@category), class: 'btn'

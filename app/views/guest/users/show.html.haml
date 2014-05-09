@@ -4,7 +4,7 @@
       %h3 Account Settings
     .span4
       - if current_user == @user
-        = link_to('Change Account Settings', edit_user_path(@user), :class => 'btn')
+        = link_to('Change Account Settings', edit_user_path(@user), class: 'btn')
 
 %p
   %strong UserName:
@@ -16,7 +16,7 @@
 
 %br
 
-= link_to('Back', users_path, :class => 'btn')
+= link_to('Back', users_path, class: 'btn')
 
 %h6 Images uploaded by #{@user.username}
 .row-fluid

@@ -1,7 +1,7 @@
 .page-header
   .row
     %h1=t '.title', :default => 'Upload'
-    = link_to('New Upload', new_admin_upload_path, :class => 'btn btn-primary pull-right')
+    = link_to('New Upload', new_admin_upload_path, class: 'btn btn-primary pull-right')
 
 = paginate @resources
 
@@ -19,7 +19,7 @@
         %td= image_tag upload.image
         %td= upload.created_at.strftime("%B %d at %I:%M %p")
         %td
-          = link_to('Edit', edit_admin_upload_path(upload), :class => 'btn btn-mini')
-          = link_to('Delete', admin_upload_path(upload), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger')
+          = link_to('Edit', edit_admin_upload_path(upload), class: 'btn btn-mini')
+          = link_to('Delete', admin_upload_path(upload), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-mini btn-danger')
 
 = paginate @resources

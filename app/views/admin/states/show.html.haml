@@ -2,11 +2,11 @@
 
 %p
   %b Name:
-  = @state.name
+  = @resource.name
 %p
   %b Country:
-  = @state.country_id
+  = @resource.country_id
 
-= link_to 'Edit', edit_state_path(@state)
+= link_to 'Edit', edit_state_path(@resource)
 \|
 = link_to 'Back', states_path

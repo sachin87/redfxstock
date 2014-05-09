@@ -1,7 +1,7 @@
-= simple_form_for [:admin, @resource], :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for [:admin, @resource], html: { class: 'form-horizontal' } do |f|
   = f.input :name
   = f.association :gallery, input_html: { class: 'chosen-select' }
   = f.input :image
   %br
-  = f.button :submit, :class => 'btn btn-primary'
-  = link_to('Cancel', admin_uploads_path, :class => 'btn')
+  = f.button :submit, class: 'btn btn-primary'
+  = link_to('Cancel', admin_uploads_path, class: 'btn')

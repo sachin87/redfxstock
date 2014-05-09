@@ -7,13 +7,13 @@
     %th
     %th
 
-  - @countries.each do |country|
+  - @resources.each do |country|
     %tr
       %td= country.name
       %td= link_to 'Show', country
-      %td= link_to 'Edit', edit_member_country_path(country)
-      %td= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Edit', edit_admin_country_path(country)
+      %td= link_to 'Destroy', [:admin, country], method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Country', new_member_country_path
+= link_to 'New Country', new_admin_country_path
