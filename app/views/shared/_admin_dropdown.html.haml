@@ -2,7 +2,7 @@
   = link_to '#', data: { target: '#', toggle: 'dropdown', role: 'button' }, class: 'dropdown-toggle', id: 'dLlabel' do
     Admin
     %b.caret
-  %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
+  %ul.dropdown-menu{"aria-labelledby" => "dLabel", 'role' => "menu"}
     = link_to admin_categories_path do
       %i.icon-lock
       Categories
