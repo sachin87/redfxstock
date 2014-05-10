@@ -1,49 +1,52 @@
-.item.text-center
-  = image_tag "logo_white.png"
+.item
+  = link_to 'LOGIN', '#', class: 'right'
   %br
-  %h2 REDFX STOCK A FREE COMMUNITY
-  %br
-  Everything you need for your creative projects plus, it's all free.
-  %br
-  .row
-    #custom-search-input
-      .input-group.col-md-12
-        %input.search-query.form-control{placeholder: "Search Images", type: "text"}/
-        %span.input-group-btn
-          %button.btn.btn-danger{type: "button"}
-            %span.glyphicon.glyphicon-search
-  %br
-  .row
-    .col-md-6
-      .panel.panel-primary
-        .panel-body
-          .row
-            .col-xs-6.col-md-6
-              %a.btn.btn-danger.btn-lg{href: "#", role: "button"}
-                %span
-                IT'S FREE SIGNUP NOW
-  %br
-  .row
-    .col-md-6
-      .panel.panel-primary
-        .panel-body
-          .row
-            .col-xs-6.col-md-6
-              %a{href: "#", role: "button"}
-                %span.glyphicon.glyphicon-list-alt
-                IMAGES
-                |
-              %a{href: "#", role: "button"}
-                %span.glyphicon.glyphicon-bookmark
-                VECTORS
-                |
-              %a{href: "#", role: "button"}
-                %span.glyphicon.glyphicon-signal
-                ICONS
-                |
-              %a{href: "#", role: "button"}
-                %span.glyphicon.glyphicon-comment
-                LOGOS
+  .text-center
+    = image_tag "logo_white.png"
+    %br
+    %h2 REDFX STOCK A FREE COMMUNITY
+    %br
+    Everything you need for your creative projects plus, it's all free.
+    %br
+    .row
+      #custom-search-input
+        .input-group.col-md-12
+          %input.search-query.form-control{placeholder: "Search Images", type: "text"}/
+          %span.input-group-btn
+            %button.btn.btn-danger{type: "button"}
+              %span.glyphicon.glyphicon-search
+    %br
+    .row
+      .col-md-6
+        .panel.panel-primary
+          .panel-body
+            .row
+              .col-xs-6.col-md-6
+                %a.btn.btn-danger.btn-lg{href: "#", role: "button"}
+                  %span
+                  IT'S FREE SIGNUP NOW
+%br
+.row
+  .col-md-6
+    .panel.panel-primary
+      .panel-body
+        .row
+          .col-xs-6.col-md-6
+            %a{href: "#", role: "button"}
+              %span.glyphicon.glyphicon-list-alt
+              IMAGES
+              |
+            %a{href: "#", role: "button"}
+              %span.glyphicon.glyphicon-bookmark
+              VECTORS
+              |
+            %a{href: "#", role: "button"}
+              %span.glyphicon.glyphicon-signal
+              ICONS
+              |
+            %a{href: "#", role: "button"}
+              %span.glyphicon.glyphicon-comment
+              LOGOS
 
 .row
   .span3

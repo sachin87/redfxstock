@@ -300,7 +300,9 @@ body{ margin-top:20px;}
 }
 
 .item {
-    background-color:#C0392B;
+    padding-top: 5%;
+    background-color: #C0392B;
+    padding-bottom: 10%;
 }
 
 /*%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css", rel: "stylesheet"}/*/
