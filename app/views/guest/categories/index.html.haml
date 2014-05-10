@@ -1,37 +1,37 @@
-.item
-  = link_to 'LOGIN', '#', class: 'right'
-  %br
+.login_link
+  =link_to 'LOGIN', '#'
+.red_box
   .text-center
     = image_tag "logo_white.png"
-    %br
-    %h2 REDFX STOCK A FREE COMMUNITY
-    %br
-    Everything you need for your creative projects plus, it's all free.
-    %br
-    .row
-      #custom-search-input
-        .input-group.col-md-12
-          %input.search-query.form-control{placeholder: "Search Images", type: "text"}/
-          %span.input-group-btn
-            %button.btn.btn-danger{type: "button"}
-              %span.glyphicon.glyphicon-search
-    %br
-    .row
-      .col-md-6
-        .panel.panel-primary
-          .panel-body
-            .row
-              .col-xs-6.col-md-6
-                %a.btn.btn-danger.btn-lg{href: "#", role: "button"}
-                  %span
-                  IT'S FREE SIGNUP NOW
+    .gap
+      %h2
+        .white_font
+          REDFX STOCK A FREE COMMUNITY
+      .white_font
+        Everything you need for your creative projects plus, it's all free.
+      .row
+        #custom-search-input
+          = form_tag class: 'form-search' do
+            = text_field_tag :image, nil, class: 'input-medium search-query'
+            = submit_tag "Search", class: 'btn'
+      %br
+      .row
+        .col-md-6
+          .panel.panel-primary
+            .panel-body
+              .row
+                .col-xs-6.col-md-6
+                  %a.btn.btn-danger.btn-lg{href: "#", role: "button"}
+                    %span
+                    IT'S FREE SIGNUP NOW
 %br
-.row
+.row.white_box.text-center.bigger_font
   .col-md-6
     .panel.panel-primary
       .panel-body
         .row
           .col-xs-6.col-md-6
+            FEATURED
             %a{href: "#", role: "button"}
               %span.glyphicon.glyphicon-list-alt
               IMAGES
