@@ -3,6 +3,7 @@ Redfxstock::Application.routes.draw do
   devise_for :users, :controllers => {:sessions => 'guest/categories'} do
     post "/sessions/user" => 'guest/categories#create'
     get "/guest/categories" => 'guest/categories#index'
+    get "/guest/categories/login" => 'guest/categories#login'
     get "/guest/categories/:id" => 'guest/categories#show'
     get '/' => 'guest/categories#index'
   end
@@ -38,7 +39,11 @@ Redfxstock::Application.routes.draw do
 
   namespace :guest do
     resources :galleries, :expertises, :profiles
-    resources :categories, only: :show
+    resources :categories do
+      collection do
+        get :login
+      end
+    end
     resources :uploads do
       resources :comments
     end

@@ -346,6 +346,39 @@ body{ margin-top:20px;}
     width: 150%;
 }
 
+.grey_font{
+    color: grey;
+    font-size: 12px;
+}
+
+.facebook
+{
+    width: 58px;
+    height: 58px;
+    background: url(social_network_icons.jpeg) 0 0;
+}
+
+.twitter
+{
+    width: 58px;
+    height: 58px;
+    background: url(social_network_icons.jpeg)  -60px -54px;
+}
+
+.linkedin
+{
+    width: 58px;
+    height: 58px;
+    background: url(social_network_icons.jpeg) -116px -107px;
+}
+
+.google
+{
+    width: 58px;
+    height: 58px;
+    background: url(social_network_icons.jpeg) -59px -108px;
+}
+
 /*%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css", rel: "stylesheet"}/*/
 /*%script#metamorph-1-start{type: "text/x-placeholder"}*/
 /*%script#metamorph-21-start{type: "text/x-placeholder"}*/

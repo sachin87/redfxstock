@@ -21,6 +21,10 @@ module Guest
       respond_with @category
     end
 
+    def login
+
+    end
+
     protected
 
     def sign_in_params
