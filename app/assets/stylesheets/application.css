@@ -9,12 +9,12 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require jquery.fileupload-ui
- *= require_self
  *= require chosen
  *= require jquery.ui.all
  *= require chosen
  *= require token-input-facebook
  *= require_tree .
+ *= require_self
  */
 
 .tile-progress {
@@ -327,6 +327,23 @@ body{ margin-top:20px;}
 
 .white_font{
     color: #ffffff;
+}
+
+.shape {
+    border: 0 none;
+    height: auto;
+    max-width: 111%;
+    vertical-align: sub;
+}
+
+.footer{
+    margin-left: 10%;
+}
+
+.hr_width {
+    margin-left: 0% !important;
+    border-color: black;
+    width: 150%;
 }
 
 /*%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css", rel: "stylesheet"}/*/

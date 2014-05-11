@@ -21,7 +21,7 @@
             .panel-body
               .row
                 .col-xs-6.col-md-6
-                  %a.btn.btn-danger.btn-lg{href: "#", role: "button"}
+                  = link_to '#', class: 'btn btn-danger btn-lg' do
                     %span
                     IT'S FREE SIGNUP NOW
 %br
@@ -32,45 +32,38 @@
         .row
           .col-xs-6.col-md-6
             FEATURED
-            %a{href: "#", role: "button"}
+            = link_to '#' do
               %span.glyphicon.glyphicon-list-alt
               IMAGES
               |
-            %a{href: "#", role: "button"}
+            = link_to '#' do
               %span.glyphicon.glyphicon-bookmark
               VECTORS
               |
-            %a{href: "#", role: "button"}
+            = link_to '#' do
               %span.glyphicon.glyphicon-signal
               ICONS
               |
-            %a{href: "#", role: "button"}
+            = link_to '#' do
               %span.glyphicon.glyphicon-comment
               LOGOS
 
-.row
-  .span3
-    = image_tag "best-logo-2013-2.jpg"
-  .span3
-    = image_tag "best-logo-2013-20.jpg"
-  .span3
-    = image_tag "best-logo-2013-38.jpg"
-  .span3
-    = image_tag "best-logo-2013-46.jpg"
-.row
-  .span3
-    = image_tag "best-logo-2013-49.jpg"
-  .span3
-    = image_tag "typeandlogo-02.jpg"
-  .span3
-    = image_tag "typeandlogo-07.jpg"
-  .span3
-    = image_tag "typeandlogo-08.jpg"
-
--#.container
--#  - @categories.in_groups_of(3) do |categories|
--#    .row
--#      - categories.compact.each do |category|
--#        .span4
--#          = link_to category.name, guest_category_path(category), class: 'btn btn-link'
-
+.white_box
+  .row
+    .span3
+      = image_tag "best-logo-2013-2.jpg", class: 'shape'
+    .span3
+      = image_tag "best-logo-2013-20.jpg", class: 'shape'
+    .span3
+      = image_tag "best-logo-2013-38.jpg", class: 'shape'
+    .span3
+      = image_tag "best-logo-2013-46.jpg", class: 'shape'
+  .row
+    .span3
+      = image_tag "best-logo-2013-49.jpg", class: 'shape'
+    .span3
+      = image_tag "typeandlogo-02.jpg", class: 'shape'
+    .span3
+      = image_tag "typeandlogo-07.jpg", class: 'shape'
+    .span3
+      = image_tag "typeandlogo-08.jpg", class: 'shape'
