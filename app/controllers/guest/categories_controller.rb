@@ -16,6 +16,15 @@ module Guest
       respond_with @category
     end
 
+    def search
+      @categories = if params[:search].present?
+        Category.where(name: params[:search][:name])
+      else
+        Category.all
+      end
+      respond_with @categories
+    end
+
     def login
       instanciate_and_clear_password
     end
