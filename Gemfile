@@ -63,7 +63,13 @@ group :test do
 
 end
 
+gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
+gem "omniauth-google-oauth2"
+
+
 gem 'best_in_place'
 gem 'jquery-fileupload-rails'
 gem "letsrate", "~> 1.0.9"
