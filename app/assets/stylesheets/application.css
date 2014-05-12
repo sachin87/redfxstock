@@ -325,6 +325,10 @@ body{ margin-top:20px;}
     margin-top: 5%;
 }
 
+.low_gap{
+    margin-top: 2%;
+}
+
 .white_font{
     color: #ffffff;
 }
@@ -353,32 +357,54 @@ body{ margin-top:20px;}
 
 .facebook
 {
-    width: 58px;
-    height: 58px;
-    background: url(social_network_icons.jpeg) 0 0;
+    width: 25px;
+    height: 30px;
+    background: url(social-media-sprite.png) 0 0;
 }
 
 .twitter
 {
-    width: 58px;
-    height: 58px;
-    background: url(social_network_icons.jpeg)  -60px -54px;
+    width: 25px;
+    height: 30px;
+    background: url(social-media-sprite.png)  -29px 0px;
 }
 
 .linkedin
 {
-    width: 58px;
-    height: 58px;
-    background: url(social_network_icons.jpeg) -116px -107px;
+    width: 25px;
+    height: 30px;
+    background: url(social-media-sprite.png) -55px 0px;
 }
 
 .google
 {
-    width: 58px;
-    height: 58px;
-    background: url(social_network_icons.jpeg) -59px -108px;
+    width: 25px;
+    height: 30px;
+    background: url(social-media-sprite.png) -84px 0px;
 }
 
+.login_button{
+    width: 230px !important;
+}
+
+.signin_with_email
+{
+    width:400px;
+    height:270px;
+    background-color: darkred;
+    margin-left: 400px;
+}
+
+.signin_with_auth
+{
+    width:400px;
+    height:150px;
+    background-color: white;
+    margin-left: 400px;
+}
+.row a{
+    display: inline-block;
+}
 /*%link{href: "//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css", rel: "stylesheet"}/*/
 /*%script#metamorph-1-start{type: "text/x-placeholder"}*/
 /*%script#metamorph-21-start{type: "text/x-placeholder"}*/

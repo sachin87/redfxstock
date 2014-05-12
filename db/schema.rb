@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140217122536) do
+ActiveRecord::Schema.define(:version => 20140217125103) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address_line_one"
     t.string   "address_line_two"
     t.string   "city"
-    t.string   "state"
+    t.integer  "state_id"
     t.string   "zip_code"
     t.integer  "country_id"
     t.integer  "user_id"
@@ -50,6 +50,12 @@ ActiveRecord::Schema.define(:version => 20140217122536) do
   add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
   add_index "comments", ["title"], :name => "index_comments_on_title"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "expertises", :force => true do |t|
     t.string   "name"
@@ -119,6 +125,13 @@ ActiveRecord::Schema.define(:version => 20140217122536) do
   end
 
   add_index "roles", ["name"], :name => "index_roles_on_name", :unique => true
+
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.integer  "country_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

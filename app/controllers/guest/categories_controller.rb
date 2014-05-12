@@ -6,11 +6,6 @@ module Guest
 
     respond_to :html, :json
 
-    def new
-      instanciate_and_clear_password
-      render 'guest/categories/index'
-    end
-
     def index
       instanciate_and_clear_password
       serialize_options(resource)
@@ -22,7 +17,7 @@ module Guest
     end
 
     def login
-
+      instanciate_and_clear_password
     end
 
     protected

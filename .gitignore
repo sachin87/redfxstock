@@ -15,5 +15,5 @@
 /tmp
 /test
 /config/database.yml
-/.idea
+.idea
 .vagrant
