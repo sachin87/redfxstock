@@ -1,12 +1,16 @@
 Redfxstock::Application.routes.draw do
 
-  devise_for :users, :controllers => {:sessions => 'guest/categories'} do
+  devise_for :users, :controllers => {sessions: 'guest/categories',
+                                      omniauth_callbacks: 'omniauth_callbacks' } do
     post "/sessions/user" => 'guest/categories#create'
     get "/guest/categories" => 'guest/categories#index'
     get "/guest/categories/login" => 'guest/categories#login'
     get "/guest/categories/:id" => 'guest/categories#show'
     get '/' => 'guest/categories#index'
   end
+
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
 
   post '/rate' => 'rater#create', :as => 'rate'
 
