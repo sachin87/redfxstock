@@ -31,36 +31,20 @@ gem 'haml-rails'
 gem "cancan"
 gem "twitter-bootstrap-rails", "~> 2.2.6"
 gem 'kaminari'
-#gem 'dropbox-sdk'
-#gem 'dropbox'
 gem 'fog'
 gem 'squeel'
 gem 'ancestry'
 gem 'chosen-rails'
 gem 'jquery_datepicker'
 gem 'jquery-ui-rails'
-#gem 'carrierwave_direct'
-#gem 'sidekiq'
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
+gem 'unicorn'
 
 group :test, :development do
   gem 'debugger'
   gem 'sqlite3'
 end
 
-
 group :test do
-
 end
 
 gem 'omniauth'
