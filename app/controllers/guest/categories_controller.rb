@@ -29,6 +29,14 @@ module Guest
       instanciate_and_clear_password
     end
 
+    def sign_type
+
+    end
+
+    def sign_up
+
+    end
+
     protected
 
     def sign_in_params

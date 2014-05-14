@@ -2,4 +2,4 @@
 
    browse this app on heroku
 
-   http://redfxstock.herokuapp.com/users/sign_in
+   http://redfxstock.herokuapp.com/

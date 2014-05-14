@@ -1,0 +1,33 @@
+.red_box
+  .text-center
+    = image_tag "logo_white.png"
+    .gap
+      .signin_with_email
+        %h3.white_font Welcome
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          = f.input :email, required: true, label: false, autofocus: true, placeholder: 'Email'
+          = f.input :password, required: true, label: false, placeholder: 'Password'
+          = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+          = f.button :submit, "Sign in", class: 'btn btn-danger login_button'
+    .gap
+      .signin_with_auth
+        %h3 Sign In
+        .grey_font
+          Just select your favourite social network to get started
+        .gap
+          .row
+            = link_to '/users/auth/:facebook' do
+              .facebook
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            = link_to '/users/auth/:twitter' do
+              .twitter
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            = link_to '/users/auth/:linkedin' do
+              .linkedin
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            = link_to '/users/auth/:google' do
+              .google
+      .low_gap
+        .white_font
+          OR SIGN UP WITH EMAIL
+.gap
