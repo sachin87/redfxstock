@@ -29,7 +29,7 @@ module Guest
       instanciate_and_clear_password
     end
 
-    def sign_type
+    def sign_up_type
 
     end
 

@@ -258,6 +258,10 @@ body{ margin-top:20px;}
     padding-bottom: 10%;
 }
 
+.red_color {
+    color: #C0392B;
+}
+
 .white_box {
     padding-top: 2%;
     background-color: #ffffff;

@@ -50,7 +50,7 @@ Redfxstock::Application.routes.draw do
       collection do
         get :login
         get :search
-        get :sign_type
+        get :sign_up_type
         get :sign_up
       end
     end
