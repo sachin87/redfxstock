@@ -2,7 +2,7 @@
 
    browse this app on heroku
 
-   http://redfxstock.herokuapp.com/
+   RedfxStock[http://redfxstock.herokuapp.com/]
 
 == About This Application
 
