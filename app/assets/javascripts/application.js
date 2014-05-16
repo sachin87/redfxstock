@@ -17,7 +17,7 @@
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 // require jquery.purr
-//= require best_in_place
+// require best_in_place
 //= require twitter/bootstrap
 //= require chosen-jquery
 //= require jquery.tokeninput
