@@ -17,7 +17,7 @@ Redfxstock::Application.routes.draw do
 
   post '/rate' => 'rater#create', :as => 'rate'
 
-  resources :tags
+  #resources :tags
   get 'tags/:tag', to: 'uploads#index', as: :tag
 
   namespace :admin do
