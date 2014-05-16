@@ -3,3 +3,14 @@
    browse this app on heroku
 
    http://redfxstock.herokuapp.com/
+
+== About This Application
+
+  Ruby Version - ruby-2.0.0-p0
+  Rails Version - 3.2.16
+  Deployed on
+   Development - Heroku
+  Carrierwave attachments saved on - Amazon S3
+  Database - Postgres
+  CSS Framework - Twitter Bootstrap
+  Templating Engine - HAML
