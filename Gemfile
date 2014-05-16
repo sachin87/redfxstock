@@ -1,41 +1,35 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.16'
+gem 'rails', '~> 4.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 
+gem 'sass-rails',   '~> 4.0.0.rc1'
+gem 'coffee-rails', '~> 4.0.0'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-  gem 'uglifier', '>= 1.0.3'
-end
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', :platforms => :ruby
+gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
-gem 'rmagick', '~> 2.13.2'
-gem 'carrierwave', '~> 0.8.0'
-gem "devise", "~> 2.2.4"
-gem "simple_form", "~> 2.1.0"
-gem 'acts_as_commentable', '3.0.1'
+gem 'rmagick'
+gem 'carrierwave'
+gem "devise"
+gem "simple_form"
+gem 'acts_as_commentable'
 gem 'acts-as-taggable-on'
 gem 'haml-rails'
 gem "cancan"
-gem "twitter-bootstrap-rails", "~> 2.2.6"
+gem "twitter-bootstrap-rails"
 gem 'kaminari'
 gem 'fog'
-gem 'squeel'
+gem 'squeel', github: 'kiela/squeel'
 gem 'ancestry'
 gem 'chosen-rails'
-gem 'jquery_datepicker'
+gem 'jquery_datepicker', github: 'foodforarabbit/jquery_datepicker'
 gem 'jquery-ui-rails'
 gem 'unicorn'
 
@@ -56,5 +50,8 @@ gem "omniauth-google-oauth2"
 
 gem 'best_in_place'
 gem 'jquery-fileupload-rails'
-gem "letsrate", "~> 1.0.9"
-gem 'strong_parameters'
+gem "letsrate"
+
+gem 'protected_attributes'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
