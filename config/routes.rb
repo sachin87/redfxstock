@@ -12,8 +12,8 @@ Redfxstock::Application.routes.draw do
     get '/' => 'guest/categories#index'
   end
 
-  match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
+  post 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
 
   post '/rate' => 'rater#create', :as => 'rate'
 
