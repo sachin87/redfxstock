@@ -33,6 +33,7 @@ gem 'chosen-rails'
 gem 'jquery_datepicker', github: 'foodforarabbit/jquery_datepicker'
 gem 'jquery-ui-rails'
 gem 'unicorn'
+gem 'rails_12factor'
 
 group :test, :development do
   gem 'debugger'
