@@ -1,7 +1,9 @@
 Redfxstock::Application.routes.draw do
 
   devise_for :users, :controllers => {sessions: 'guest/categories',
-                                      omniauth_callbacks: 'omniauth_callbacks' } do
+                                      omniauth_callbacks: 'omniauth_callbacks' }
+
+  devise_scope :user do
     post "/sessions/user" => 'guest/categories#create'
     get "/guest/categories" => 'guest/categories#index'
     get "/guest/categories/login" => 'guest/categories#login'
