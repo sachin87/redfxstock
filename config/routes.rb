@@ -9,7 +9,7 @@ Redfxstock::Application.routes.draw do
     get "/guest/categories/login" => 'guest/categories#login'
     get "/guest/categories/search" => 'guest/categories#search'
     get "/guest/categories/sign_up" => 'guest/categories#sign_up'
-    get "/guest/categories/sign_type" => 'guest/categories#sign_type'
+    get "/guest/categories/sign_up_type" => 'guest/categories#sign_up_type'
     get "/guest/categories/:id" => 'guest/categories#show'
     get '/' => 'guest/categories#index'
   end
