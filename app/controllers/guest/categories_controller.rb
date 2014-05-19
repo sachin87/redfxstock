@@ -1,8 +1,8 @@
 module Guest
   class CategoriesController < Devise::SessionsController
 
-    skip_before_filter :authenticate_user!
-    before_filter :load_categories, only: [:new, :index]
+    skip_before_action :authenticate_user!
+    before_action :load_categories, only: [:new, :index]
 
     respond_to :html, :json
 

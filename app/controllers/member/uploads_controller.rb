@@ -1,7 +1,7 @@
 module Member
   class UploadsController < ApplicationController
 
-    before_filter :load_upload, only: [:edit, :update, :destroy]
+    before_action :load_upload, only: [:edit, :update, :destroy]
 
     respond_to :html, :json
 

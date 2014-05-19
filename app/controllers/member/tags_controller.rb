@@ -3,7 +3,7 @@ module Member
 
     respond_to :json, :xml
 
-    before_filter :load_tag, only: [:edit, :show, :update, :destroy]
+    before_action :load_tag, only: [:edit, :show, :update, :destroy]
 
     def index
       respond_to do |format|

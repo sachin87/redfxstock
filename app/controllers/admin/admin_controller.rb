@@ -4,8 +4,8 @@ class Admin::AdminController < ::ApplicationController
 
   respond_to :html, :json
 
-  before_filter :verify_admin
-  before_filter :load_resource, except: [:index, :new, :create]
+  before_action :verify_admin
+  before_action :load_resource, except: [:index, :new, :create]
 
   def index
     @resources = klass.page params[:page]

@@ -3,8 +3,8 @@ module Member
 
     respond_to :json, :xml
 
-    before_filter :load_comment, only: [:edit, :show, :update, :destroy]
-    before_filter :find_upload, only: [:create, :update]
+    before_action :load_comment, only: [:edit, :show, :update, :destroy]
+    before_action :find_upload, only: [:create, :update]
 
     def index
       @comments = Comment.all
