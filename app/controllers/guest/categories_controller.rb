@@ -7,8 +7,6 @@ module Guest
     respond_to :html, :json
 
     def index
-      instanciate_and_clear_password
-      serialize_options(resource)
     end
 
     def show
