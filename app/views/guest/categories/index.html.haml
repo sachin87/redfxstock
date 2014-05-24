@@ -11,7 +11,7 @@
         Everything you need for your creative projects plus, it's all free.
       .row
         #custom-search-input
-          = form_tag search_guest_categories_path, method: :get, class: 'form-search' do
+          = form_tag search_path, method: :get, class: 'form-search' do
             = text_field_tag 'search[name]', nil, class: 'input-medium search-query'
             = submit_tag 'Search', class: 'btn'
       %br
