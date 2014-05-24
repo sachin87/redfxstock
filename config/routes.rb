@@ -4,13 +4,11 @@ Redfxstock::Application.routes.draw do
                                       omniauth_callbacks: 'omniauth_callbacks' }
 
   devise_scope :user do
-    post "/sessions/user" => 'guest/categories#create'
-    get "/guest/categories" => 'guest/categories#index'
-    get "/guest/categories/login" => 'guest/categories#login'
-    get "/guest/categories/search" => 'guest/categories#search'
-    get "/guest/categories/sign_up" => 'guest/categories#sign_up'
-    get "/guest/categories/sign_up_type" => 'guest/categories#sign_up_type'
-    get "/guest/categories/:id" => 'guest/categories#show'
+   get '/guest/categories' => 'guest/categories#index'
+    get '/login' => 'devise/sessions#new'
+    get '/search' => 'guest/categories#search'
+    get '/sign_up' => 'devise/registrations#new'
+    get '/categories/:id' => 'guest/categories#show'
     get '/' => 'guest/categories#index'
   end
 
@@ -48,14 +46,7 @@ Redfxstock::Application.routes.draw do
 
   namespace :guest do
     resources :galleries, :expertises, :profiles
-    resources :categories do
-      collection do
-        get :login
-        get :search
-        get :sign_up_type
-        get :sign_up
-      end
-    end
+    resources :categories
     resources :uploads do
       resources :comments
     end
@@ -65,6 +56,6 @@ Redfxstock::Application.routes.draw do
     end
   end
 
-  root :to => "guest/categories#index"
+  root :to => 'guest/categories#index'
 
 end

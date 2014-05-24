@@ -2,11 +2,12 @@ module Guest
   class CategoriesController < ApplicationController
 
     skip_before_action :authenticate_user!
-    before_action :load_categories, only: [:new, :index]
+    before_action :load_categories, only: :index
 
     respond_to :html, :json
 
     def index
+      respond_with @categories
     end
 
     def show

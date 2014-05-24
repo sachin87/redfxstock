@@ -5,18 +5,6 @@ class SessionsController < Devise::SessionsController
 
   respond_to :html, :json
 
-  def login
-    instanciate_and_clear_password
-  end
-
-  def sign_up_type
-
-  end
-
-  def sign_up
-
-  end
-
   protected
 
   def sign_in_params

@@ -1,8 +1,8 @@
 .login_link
-  = link_to 'LOGIN', login_guest_categories_path
+  = link_to 'LOGIN', login_path
 .red_box
   .text-center
-    = image_tag "logo_white.png"
+    = image_tag 'logo_white.png'
     .gap
       %h2
         .white_font
@@ -13,7 +13,7 @@
         #custom-search-input
           = form_tag search_guest_categories_path, method: :get, class: 'form-search' do
             = text_field_tag 'search[name]', nil, class: 'input-medium search-query'
-            = submit_tag "Search", class: 'btn'
+            = submit_tag 'Search', class: 'btn'
       %br
       .row
         .col-md-6
@@ -50,20 +50,20 @@
 
 .white_box
   .row
-    .span3
-      = image_tag "best-logo-2013-2.jpg", class: 'shape'
-    .span3
-      = image_tag "best-logo-2013-20.jpg", class: 'shape'
-    .span3
-      = image_tag "best-logo-2013-38.jpg", class: 'shape'
-    .span3
-      = image_tag "best-logo-2013-46.jpg", class: 'shape'
+    .col-md-3
+      = image_tag 'best-logo-2013-2.jpg', class: 'shape'
+    .col-md-3
+      = image_tag 'best-logo-2013-20.jpg', class: 'shape'
+    .col-md-3
+      = image_tag 'best-logo-2013-38.jpg', class: 'shape'
+    .col-md-3
+      = image_tag 'best-logo-2013-46.jpg', class: 'shape'
   .row
-    .span3
-      = image_tag "best-logo-2013-49.jpg", class: 'shape'
-    .span3
-      = image_tag "typeandlogo-02.jpg", class: 'shape'
-    .span3
-      = image_tag "typeandlogo-07.jpg", class: 'shape'
-    .span3
-      = image_tag "typeandlogo-08.jpg", class: 'shape'
+    .col-md-3
+      = image_tag 'best-logo-2013-49.jpg', class: 'shape'
+    .col-md-3
+      = image_tag 'typeandlogo-02.jpg', class: 'shape'
+    .col-md-3
+      = image_tag 'typeandlogo-07.jpg', class: 'shape'
+    .col-md-3
+      = image_tag 'typeandlogo-08.jpg', class: 'shape'

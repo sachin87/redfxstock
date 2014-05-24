@@ -1,0 +1,122 @@
+.red_box {
+    padding-top: 5%;
+    background-color: #C0392B;
+    padding-bottom: 10%;
+}
+
+.red_color {
+    color: #C0392B;
+}
+
+.white_box {
+    padding-top: 2%;
+    background-color: #ffffff;
+    padding-bottom: 2%;
+}
+
+.signup-options {
+    margin-left: 33%;
+    position: relative;
+    width: 33%;
+    height: 500px;
+}
+
+.bigger_font {
+    font-size: 18px;
+}
+
+.login_link{
+    padding-left: 80%;
+    padding-right: 20%;
+    background-color: #C0392B;
+}
+
+.gap{
+    margin-top: 5%;
+}
+
+.low_gap{
+    margin-top: 2%;
+}
+
+.white_font{
+    color: #ffffff;
+}
+
+.shape {
+    border: 0 none;
+    height: auto;
+    max-width: 111%;
+    vertical-align: sub;
+}
+
+.footer{
+    margin-left: 10%;
+}
+
+.hr_width {
+    margin-left: 0% !important;
+    border-color: black;
+    width: 150%;
+}
+
+.grey_font{
+    color: grey;
+    font-size: 12px;
+}
+
+.facebook
+{
+    width: 25px;
+    height: 30px;
+    background: url(social-media-sprite.png) 0 0;
+}
+
+.twitter
+{
+    width: 25px;
+    height: 30px;
+    background: url(social-media-sprite.png)  -29px 0px;
+}
+
+.linkedin
+{
+    width: 25px;
+    height: 30px;
+    background: url(social-media-sprite.png) -55px 0px;
+}
+
+.google
+{
+    width: 25px;
+    height: 30px;
+    background: url(social-media-sprite.png) -84px 0px;
+}
+
+.login_button{
+    width: 230px !important;
+}
+
+.signin_with_email
+{
+    width:400px;
+    height:270px;
+    background-color: darkred;
+    margin-left: 400px;
+}
+
+.signin_with_auth
+{
+    width:400px;
+    height:150px;
+    background-color: white;
+    margin-left: 400px;
+}
+
+.row a{
+    display: inline-block;
+}
+
+.text-center {
+    text-align: center;
+}
