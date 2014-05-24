@@ -99,18 +99,19 @@
 
 .signin_with_email
 {
-    width:400px;
+    width:33%;
     height:270px;
     background-color: darkred;
-    margin-left: 400px;
+    margin-left: 33%;
+    text-align: center;
 }
 
 .signin_with_auth
 {
-    width:400px;
+    width:33%;
     height:150px;
     background-color: white;
-    margin-left: 400px;
+    margin-left: 33%;
 }
 
 .row a{
